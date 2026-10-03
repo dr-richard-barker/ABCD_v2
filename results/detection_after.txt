@@ -1,4 +1,4 @@
-# app: /Users/drb_laptop/Documents/AstroBotany_calibration_image_sharing_and_analysis @ 773263b + uncommitted changes
+# app: AstroBotany_calibration_image_sharing_and_analysis @ 773263b + uncommitted changes
 v1_flat_plain                  card v1 ids verified 4/4 max corner error 1.7 px OK
 v1_flat_cast_blur              card v1 ids verified 4/4 max corner error 1.5 px OK
 v1_persp_mild_plain            card v1 ids verified 4/4 max corner error 1.1 px OK

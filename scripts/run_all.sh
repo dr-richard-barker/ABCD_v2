@@ -32,7 +32,7 @@ SCALE=2.75 FPX=$V1FPX $PY verify/make_test_images.py reference/ABC_v1_stickermul
 
 run_detect() {  # $1 app checkout, $2 output file
   (cd verify && APP="$1" node build.mjs)
-  { echo "# app: $1 @ $(git -C "$1" rev-parse --short HEAD)$(git -C "$1" diff --quiet -- src || echo ' + uncommitted changes')"
+  { echo "# app: AstroBotany_calibration_image_sharing_and_analysis @ $(git -C "$1" rev-parse --short HEAD)$(git -C "$1" diff --quiet -- src || echo ' + uncommitted changes')"
     node verify/detect.mjs "$TMP" v1_; node verify/detect.mjs "$TMP" v2_; } | tee "$2"
   rm -f verify/detect.mjs
 }

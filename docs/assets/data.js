@@ -2719,7 +2719,7 @@ window.ABCD = {
 },
 "detection": {
 "before": {
-"app": "app: /private/tmp/claude-501/-Users-drb-laptop-Documents/1e3f4e80-3016-45aa-99e3-b8358c38e4cc/scratchpad/app_before @ 773263b",
+"app": "app: AstroBotany_calibration_image_sharing_and_analysis @ 773263b",
 "rows": [
 {
 "card": "v1",
@@ -2904,7 +2904,7 @@ window.ABCD = {
 ]
 },
 "after": {
-"app": "app: /Users/drb_laptop/Documents/AstroBotany_calibration_image_sharing_and_analysis @ 773263b + uncommitted changes",
+"app": "app: AstroBotany_calibration_image_sharing_and_analysis @ 773263b + uncommitted changes",
 "rows": [
 {
 "card": "v1",
