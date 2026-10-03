@@ -1,0 +1,2655 @@
+{
+ "version": 2,
+ "batch": 1,
+ "geometry": {
+  "card_mm": [
+   140.0,
+   90.0
+  ],
+  "bleed_mm": 3.0,
+  "corner_radius_mm": 3.0,
+  "fiducial_edge_mm": 16.0,
+  "fiducial_centres_mm": {
+   "TL": [
+    10.5,
+    10.5
+   ],
+   "TR": [
+    129.5,
+    10.5
+   ],
+   "BL": [
+    10.5,
+    79.5
+   ],
+   "BR": [
+    129.5,
+    79.5
+   ]
+  },
+  "fiducial_aruco": {
+   "dictionary": "DICT_4X4_50",
+   "ids": {
+    "TL": 0,
+    "TR": 1,
+    "BR": 2,
+    "BL": 3
+   },
+   "v1_ids": {
+    "TL": 47,
+    "TR": 48,
+    "BR": 49,
+    "BL": 46
+   }
+  },
+  "fiducial_bits": {
+   "TL": [
+    "######",
+    "#.#..#",
+    "##.#.#",
+    "###..#",
+    "###.##",
+    "######"
+   ],
+   "TR": [
+    "######",
+    "######",
+    "#....#",
+    "#.##.#",
+    "#.#.##",
+    "######"
+   ],
+   "BR": [
+    "######",
+    "###..#",
+    "###..#",
+    "###.##",
+    "#..#.#",
+    "######"
+   ],
+   "BL": [
+    "######",
+    "#.##.#",
+    "#.##.#",
+    "##.###",
+    "##..##",
+    "######"
+   ]
+  },
+  "fiducial_bits_v1": {
+   "TL": [
+    "######",
+    "##.###",
+    "#.#..#",
+    "##..##",
+    "##.###",
+    "######"
+   ],
+   "TR": [
+    "######",
+    "##.#.#",
+    "######",
+    "###.##",
+    "#...##",
+    "######"
+   ],
+   "BR": [
+    "######",
+    "##.#.#",
+    "######",
+    "####.#",
+    "###..#",
+    "######"
+   ],
+   "BL": [
+    "######",
+    "###.##",
+    "#..#.#",
+    "###..#",
+    "#....#",
+    "######"
+   ]
+  },
+  "fiducial_bits_note": "6x6 cells, '#'=black, row-major from the top-left, as printed (unrotated)",
+  "corner_span_cm": {
+   "x": 11.9,
+   "y": 6.9
+  },
+  "quad_uv_convention": "u: TL->TR, v: TL->BL across fiducial centres (as ASTRO_CHIPS in src/lib/colorcalib.ts)",
+  "ruler_h": {
+   "origin_mm": [
+    20.0,
+    4.0
+   ],
+   "length_cm": 10.0
+  },
+  "ruler_v": {
+   "origin_mm": [
+    3.0,
+    20.0
+   ],
+   "length_cm": 5.0
+  },
+  "checker": {
+   "origin_mm": [
+    121.5,
+    20.0
+   ],
+   "pitch_mm": 5.0,
+   "nx": 3,
+   "ny": 10
+  },
+  "id_code": {
+   "origin_mm": [
+    21.0,
+    81.0
+   ],
+   "cell_mm": 2.5,
+   "bits": [
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    0,
+    1
+   ],
+   "encoding": "3-bit version + 5-bit batch, MSB first, black=1"
+  },
+  "panel": {
+   "colour": "black (K100 / sRGB #000000)",
+   "sRGB": "#000000",
+   "why": "crisp chip edges, ColorChecker convention, keeps the N5 ramp step visible"
+  },
+  "colour_pipeline": "Munsell renotation (colour-science 0.4.4, Illuminant C, 2deg) -> Bradford -> Lab D50 / sRGB D65; gamut gate: Generic CMYK Profile.icc, relative colorimetric, dE2000 <= 3.0"
+ },
+ "chips": [
+  {
+   "id": "A1",
+   "group": "calibration",
+   "row": 1,
+   "col": 1,
+   "label": "white anchor",
+   "munsell": "N9.5",
+   "munsell_requested": "N9.5",
+   "xyY_C": [
+    0.31006,
+    0.31616,
+    0.87756
+   ],
+   "Lab_D50": [
+    95.06,
+    0.0,
+    -0.0
+   ],
+   "sRGB_D65": "#F1F1F1",
+   "sRGB_in_gamut": true,
+   "CMYK_generic_pct": [
+    3.9,
+    3.1,
+    2.4,
+    0.0
+   ],
+   "gamut_dE2000": 0.37,
+   "x_mm": 20.5,
+   "y_mm": 19.5,
+   "centre_mm": [
+    25.0,
+    24.0
+   ],
+   "u": 0.1218,
+   "v": 0.1957,
+   "size_mm": [
+    9.0,
+    9.0
+   ]
+  },
+  {
+   "id": "A2",
+   "group": "calibration",
+   "row": 1,
+   "col": 2,
+   "label": "red",
+   "munsell": "5R 4/12",
+   "munsell_requested": "5R 4/12",
+   "xyY_C": [
+    0.5385,
+    0.3129,
+    0.11701
+   ],
+   "Lab_D50": [
+    41.23,
+    52.98,
+    26.76
+   ],
+   "sRGB_D65": "#B12F39",
+   "sRGB_in_gamut": true,
+   "CMYK_generic_pct": [
+    9.0,
+    91.4,
+    73.7,
+    14.5
+   ],
+   "gamut_dE2000": 1.02,
+   "x_mm": 30.5,
+   "y_mm": 19.5,
+   "centre_mm": [
+    35.0,
+    24.0
+   ],
+   "u": 0.2059,
+   "v": 0.1957,
+   "size_mm": [
+    9.0,
+    9.0
+   ]
+  },
+  {
+   "id": "A3",
+   "group": "calibration",
+   "row": 1,
+   "col": 3,
+   "label": "orange",
+   "munsell": "5YR 6/12",
+   "munsell_requested": "5YR 6/12",
+   "xyY_C": [
+    0.5199,
+    0.4119,
+    0.29301
+   ],
+   "Lab_D50": [
+    61.66,
+    33.6,
+    64.11
+   ],
+   "sRGB_D65": "#DB7B17",
+   "sRGB_in_gamut": true,
+   "CMYK_generic_pct": [
+    1.2,
+    53.7,
+    98.4,
+    4.3
+   ],
+   "gamut_dE2000": 2.45,
+   "x_mm": 40.5,
+   "y_mm": 19.5,
+   "centre_mm": [
+    45.0,
+    24.0
+   ],
+   "u": 0.2899,
+   "v": 0.1957,
+   "size_mm": [
+    9.0,
+    9.0
+   ]
+  },
+  {
+   "id": "A4",
+   "group": "calibration",
+   "row": 1,
+   "col": 4,
+   "label": "yellow",
+   "munsell": "5Y 8/10",
+   "munsell_requested": "5Y 8/12",
+   "xyY_C": [
+    0.4376,
+    0.4601,
+    0.5762
+   ],
+   "Lab_D50": [
+    81.09,
+    1.16,
+    70.56
+   ],
+   "sRGB_D65": "#E6C737",
+   "sRGB_in_gamut": true,
+   "CMYK_generic_pct": [
+    3.5,
+    12.2,
+    90.6,
+    4.7
+   ],
+   "gamut_dE2000": 0.99,
+   "x_mm": 50.5,
+   "y_mm": 19.5,
+   "centre_mm": [
+    55.0,
+    24.0
+   ],
+   "u": 0.3739,
+   "v": 0.1957,
+   "size_mm": [
+    9.0,
+    9.0
+   ]
+  },
+  {
+   "id": "A5",
+   "group": "calibration",
+   "row": 1,
+   "col": 5,
+   "label": "green",
+   "munsell": "2.5G 5/8",
+   "munsell_requested": "2.5G 5/10",
+   "xyY_C": [
+    0.271,
+    0.438,
+    0.19272
+   ],
+   "Lab_D50": [
+    51.08,
+    -40.04,
+    19.77
+   ],
+   "sRGB_D65": "#228B56",
+   "sRGB_in_gamut": true,
+   "CMYK_generic_pct": [
+    80.4,
+    11.8,
+    81.2,
+    11.0
+   ],
+   "gamut_dE2000": 0.48,
+   "x_mm": 60.5,
+   "y_mm": 19.5,
+   "centre_mm": [
+    65.0,
+    24.0
+   ],
+   "u": 0.458,
+   "v": 0.1957,
+   "size_mm": [
+    9.0,
+    9.0
+   ]
+  },
+  {
+   "id": "A6",
+   "group": "calibration",
+   "row": 1,
+   "col": 6,
+   "label": "cyan",
+   "munsell": "5B 5/6",
+   "munsell_requested": "5B 5/8",
+   "xyY_C": [
+    0.2215,
+    0.2701,
+    0.19272
+   ],
+   "Lab_D50": [
+    50.64,
+    -20.86,
+    -19.88
+   ],
+   "sRGB_D65": "#2D849A",
+   "sRGB_in_gamut": true,
+   "CMYK_generic_pct": [
+    78.8,
+    25.1,
+    20.8,
+    8.2
+   ],
+   "gamut_dE2000": 0.7,
+   "x_mm": 70.5,
+   "y_mm": 19.5,
+   "centre_mm": [
+    75.0,
+    24.0
+   ],
+   "u": 0.542,
+   "v": 0.1957,
+   "size_mm": [
+    9.0,
+    9.0
+   ]
+  },
+  {
+   "id": "A7",
+   "group": "calibration",
+   "row": 1,
+   "col": 7,
+   "label": "blue",
+   "munsell": "7.5PB 3/10",
+   "munsell_requested": "7.5PB 3/12",
+   "xyY_C": [
+    0.2005,
+    0.1536,
+    0.06391
+   ],
+   "Lab_D50": [
+    29.57,
+    14.04,
+    -43.14
+   ],
+   "sRGB_D65": "#35408A",
+   "sRGB_in_gamut": true,
+   "CMYK_generic_pct": [
+    90.2,
+    81.2,
+    3.1,
+    3.9
+   ],
+   "gamut_dE2000": 2.03,
+   "x_mm": 80.5,
+   "y_mm": 19.5,
+   "centre_mm": [
+    85.0,
+    24.0
+   ],
+   "u": 0.6261,
+   "v": 0.1957,
+   "size_mm": [
+    9.0,
+    9.0
+   ]
+  },
+  {
+   "id": "A8",
+   "group": "calibration",
+   "row": 1,
+   "col": 8,
+   "label": "purple",
+   "munsell": "5P 3/10",
+   "munsell_requested": "5P 3/10",
+   "xyY_C": [
+    0.2772,
+    0.1707,
+    0.06391
+   ],
+   "Lab_D50": [
+    29.95,
+    34.21,
+    -32.24
+   ],
+   "sRGB_D65": "#66307A",
+   "sRGB_in_gamut": true,
+   "CMYK_generic_pct": [
+    66.3,
+    93.3,
+    2.4,
+    5.1
+   ],
+   "gamut_dE2000": 1.3,
+   "x_mm": 90.5,
+   "y_mm": 19.5,
+   "centre_mm": [
+    95.0,
+    24.0
+   ],
+   "u": 0.7101,
+   "v": 0.1957,
+   "size_mm": [
+    9.0,
+    9.0
+   ]
+  },
+  {
+   "id": "A9",
+   "group": "calibration",
+   "row": 1,
+   "col": 9,
+   "label": "magenta",
+   "munsell": "2.5RP 5/12",
+   "munsell_requested": "2.5RP 5/12",
+   "xyY_C": [
+    0.3635,
+    0.2325,
+    0.19272
+   ],
+   "Lab_D50": [
+    50.99,
+    48.58,
+    -15.44
+   ],
+   "sRGB_D65": "#BC5395",
+   "sRGB_in_gamut": true,
+   "CMYK_generic_pct": [
+    20.4,
+    77.3,
+    1.2,
+    0.4
+   ],
+   "gamut_dE2000": 1.45,
+   "x_mm": 100.5,
+   "y_mm": 19.5,
+   "centre_mm": [
+    105.0,
+    24.0
+   ],
+   "u": 0.7941,
+   "v": 0.1957,
+   "size_mm": [
+    9.0,
+    9.0
+   ]
+  },
+  {
+   "id": "A10",
+   "group": "calibration",
+   "row": 1,
+   "col": 10,
+   "label": "black anchor",
+   "munsell": "N2",
+   "munsell_requested": "N2",
+   "xyY_C": [
+    0.31006,
+    0.31616,
+    0.03048
+   ],
+   "Lab_D50": [
+    20.24,
+    0.0,
+    0.0
+   ],
+   "sRGB_D65": "#313131",
+   "sRGB_in_gamut": true,
+   "CMYK_generic_pct": [
+    79.2,
+    75.3,
+    71.4,
+    40.4
+   ],
+   "gamut_dE2000": 1.46,
+   "x_mm": 110.5,
+   "y_mm": 19.5,
+   "centre_mm": [
+    115.0,
+    24.0
+   ],
+   "u": 0.8782,
+   "v": 0.1957,
+   "size_mm": [
+    9.0,
+    9.0
+   ]
+  },
+  {
+   "id": "B1",
+   "group": "plant",
+   "row": 2,
+   "col": 1,
+   "label": "deep green leaf",
+   "munsell": "5G 3/4",
+   "munsell_requested": "5G 3/4",
+   "xyY_C": [
+    0.2711,
+    0.378,
+    0.06391
+   ],
+   "Lab_D50": [
+    30.38,
+    -19.78,
+    6.01
+   ],
+   "sRGB_D65": "#24503D",
+   "sRGB_in_gamut": true,
+   "CMYK_generic_pct": [
+    81.2,
+    35.7,
+    72.2,
+    40.8
+   ],
+   "gamut_dE2000": 0.21,
+   "x_mm": 20.5,
+   "y_mm": 29.5,
+   "centre_mm": [
+    25.0,
+    34.0
+   ],
+   "u": 0.1218,
+   "v": 0.3406,
+   "size_mm": [
+    9.0,
+    9.0
+   ]
+  },
+  {
+   "id": "B2",
+   "group": "plant",
+   "row": 2,
+   "col": 2,
+   "label": "dark green leaf",
+   "munsell": "2.5G 4/6",
+   "munsell_requested": "2.5G 4/6",
+   "xyY_C": [
+    0.2735,
+    0.4215,
+    0.11701
+   ],
+   "Lab_D50": [
+    40.79,
+    -30.74,
+    14.46
+   ],
+   "sRGB_D65": "#246D47",
+   "sRGB_in_gamut": true,
+   "CMYK_generic_pct": [
+    82.7,
+    23.1,
+    80.8,
+    24.7
+   ],
+   "gamut_dE2000": 0.68,
+   "x_mm": 30.5,
+   "y_mm": 29.5,
+   "centre_mm": [
+    35.0,
+    34.0
+   ],
+   "u": 0.2059,
+   "v": 0.3406,
+   "size_mm": [
+    9.0,
+    9.0
+   ]
+  },
+  {
+   "id": "B3",
+   "group": "plant",
+   "row": 2,
+   "col": 3,
+   "label": "dark leaf green",
+   "munsell": "7.5GY 3/4",
+   "munsell_requested": "7.5GY 3/4",
+   "xyY_C": [
+    0.327,
+    0.4288,
+    0.06391
+   ],
+   "Lab_D50": [
+    30.5,
+    -14.67,
+    17.12
+   ],
+   "sRGB_D65": "#374E2C",
+   "sRGB_in_gamut": true,
+   "CMYK_generic_pct": [
+    67.1,
+    34.9,
+    87.8,
+    45.9
+   ],
+   "gamut_dE2000": 0.85,
+   "x_mm": 40.5,
+   "y_mm": 29.5,
+   "centre_mm": [
+    45.0,
+    34.0
+   ],
+   "u": 0.2899,
+   "v": 0.3406,
+   "size_mm": [
+    9.0,
+    9.0
+   ]
+  },
+  {
+   "id": "B4",
+   "group": "plant",
+   "row": 2,
+   "col": 4,
+   "label": "leaf green",
+   "munsell": "5GY 4/6",
+   "munsell_requested": "5GY 4/6",
+   "xyY_C": [
+    0.3718,
+    0.4852,
+    0.11701
+   ],
+   "Lab_D50": [
+    40.98,
+    -16.45,
+    35.79
+   ],
+   "sRGB_D65": "#536821",
+   "sRGB_in_gamut": true,
+   "CMYK_generic_pct": [
+    44.7,
+    19.6,
+    93.7,
+    40.4
+   ],
+   "gamut_dE2000": 2.65,
+   "x_mm": 50.5,
+   "y_mm": 29.5,
+   "centre_mm": [
+    55.0,
+    34.0
+   ],
+   "u": 0.3739,
+   "v": 0.3406,
+   "size_mm": [
+    9.0,
+    9.0
+   ]
+  },
+  {
+   "id": "B5",
+   "group": "plant",
+   "row": 2,
+   "col": 5,
+   "label": "bright leaf green",
+   "munsell": "7.5GY 5/8",
+   "munsell_requested": "7.5GY 5/8",
+   "xyY_C": [
+    0.3412,
+    0.4976,
+    0.19272
+   ],
+   "Lab_D50": [
+    51.25,
+    -29.31,
+    39.85
+   ],
+   "sRGB_D65": "#558730",
+   "sRGB_in_gamut": true,
+   "CMYK_generic_pct": [
+    57.6,
+    11.0,
+    94.1,
+    22.4
+   ],
+   "gamut_dE2000": 2.1,
+   "x_mm": 60.5,
+   "y_mm": 29.5,
+   "centre_mm": [
+    65.0,
+    34.0
+   ],
+   "u": 0.458,
+   "v": 0.3406,
+   "size_mm": [
+    9.0,
+    9.0
+   ]
+  },
+  {
+   "id": "B6",
+   "group": "plant",
+   "row": 2,
+   "col": 6,
+   "label": "light green leaf",
+   "munsell": "5GY 6/8",
+   "munsell_requested": "5GY 6/8",
+   "xyY_C": [
+    0.3772,
+    0.488,
+    0.29301
+   ],
+   "Lab_D50": [
+    61.39,
+    -21.35,
+    50.35
+   ],
+   "sRGB_D65": "#839E32",
+   "sRGB_in_gamut": true,
+   "CMYK_generic_pct": [
+    39.6,
+    7.5,
+    94.9,
+    16.5
+   ],
+   "gamut_dE2000": 1.38,
+   "x_mm": 70.5,
+   "y_mm": 29.5,
+   "centre_mm": [
+    75.0,
+    34.0
+   ],
+   "u": 0.542,
+   "v": 0.3406,
+   "size_mm": [
+    9.0,
+    9.0
+   ]
+  },
+  {
+   "id": "B7",
+   "group": "plant",
+   "row": 2,
+   "col": 7,
+   "label": "chlorotic yellow-green",
+   "munsell": "2.5GY 7/8",
+   "munsell_requested": "2.5GY 7/8",
+   "xyY_C": [
+    0.3919,
+    0.4684,
+    0.41985
+   ],
+   "Lab_D50": [
+    71.27,
+    -14.9,
+    54.61
+   ],
+   "sRGB_D65": "#ABB543",
+   "sRGB_in_gamut": true,
+   "CMYK_generic_pct": [
+    27.1,
+    7.1,
+    89.4,
+    9.0
+   ],
+   "gamut_dE2000": 0.71,
+   "x_mm": 80.5,
+   "y_mm": 29.5,
+   "centre_mm": [
+    85.0,
+    34.0
+   ],
+   "u": 0.6261,
+   "v": 0.3406,
+   "size_mm": [
+    9.0,
+    9.0
+   ]
+  },
+  {
+   "id": "B8",
+   "group": "plant",
+   "row": 2,
+   "col": 8,
+   "label": "pale chlorotic yellow",
+   "munsell": "5Y 8/6",
+   "munsell_requested": "5Y 8/6",
+   "xyY_C": [
+    0.3913,
+    0.4117,
+    0.5762
+   ],
+   "Lab_D50": [
+    80.94,
+    -0.39,
+    43.35
+   ],
+   "sRGB_D65": "#DCC876",
+   "sRGB_in_gamut": true,
+   "CMYK_generic_pct": [
+    10.6,
+    14.1,
+    61.2,
+    1.6
+   ],
+   "gamut_dE2000": 0.66,
+   "x_mm": 90.5,
+   "y_mm": 29.5,
+   "centre_mm": [
+    95.0,
+    34.0
+   ],
+   "u": 0.7101,
+   "v": 0.3406,
+   "size_mm": [
+    9.0,
+    9.0
+   ]
+  },
+  {
+   "id": "B9",
+   "group": "plant",
+   "row": 2,
+   "col": 9,
+   "label": "glaucous blue-green",
+   "munsell": "5BG 5/4",
+   "munsell_requested": "5BG 5/4",
+   "xyY_C": [
+    0.2591,
+    0.3246,
+    0.19272
+   ],
+   "Lab_D50": [
+    50.89,
+    -20.49,
+    -3.44
+   ],
+   "sRGB_D65": "#4B837E",
+   "sRGB_in_gamut": true,
+   "CMYK_generic_pct": [
+    71.4,
+    28.2,
+    43.5,
+    7.5
+   ],
+   "gamut_dE2000": 0.48,
+   "x_mm": 100.5,
+   "y_mm": 29.5,
+   "centre_mm": [
+    105.0,
+    34.0
+   ],
+   "u": 0.7941,
+   "v": 0.3406,
+   "size_mm": [
+    9.0,
+    9.0
+   ]
+  },
+  {
+   "id": "B10",
+   "group": "plant",
+   "row": 2,
+   "col": 10,
+   "label": "green stem",
+   "munsell": "7.5G 5/6",
+   "munsell_requested": "7.5G 5/6",
+   "xyY_C": [
+    0.2598,
+    0.3724,
+    0.19272
+   ],
+   "Lab_D50": [
+    50.98,
+    -31.39,
+    6.42
+   ],
+   "sRGB_D65": "#34886D",
+   "sRGB_in_gamut": true,
+   "CMYK_generic_pct": [
+    77.6,
+    19.2,
+    59.6,
+    9.4
+   ],
+   "gamut_dE2000": 0.9,
+   "x_mm": 110.5,
+   "y_mm": 29.5,
+   "centre_mm": [
+    115.0,
+    34.0
+   ],
+   "u": 0.8782,
+   "v": 0.3406,
+   "size_mm": [
+    9.0,
+    9.0
+   ]
+  },
+  {
+   "id": "C1",
+   "group": "plant",
+   "row": 3,
+   "col": 1,
+   "label": "senescent yellow",
+   "munsell": "2.5Y 7/10",
+   "munsell_requested": "2.5Y 7/10",
+   "xyY_C": [
+    0.4606,
+    0.4516,
+    0.41985
+   ],
+   "Lab_D50": [
+    71.42,
+    9.91,
+    67.33
+   ],
+   "sRGB_D65": "#D7A725",
+   "sRGB_in_gamut": true,
+   "CMYK_generic_pct": [
+    3.5,
+    25.5,
+    95.7,
+    9.4
+   ],
+   "gamut_dE2000": 1.06,
+   "x_mm": 20.5,
+   "y_mm": 39.5,
+   "centre_mm": [
+    25.0,
+    44.0
+   ],
+   "u": 0.1218,
+   "v": 0.4855,
+   "size_mm": [
+    9.0,
+    9.0
+   ]
+  },
+  {
+   "id": "C2",
+   "group": "plant",
+   "row": 3,
+   "col": 2,
+   "label": "senescent orange",
+   "munsell": "7.5YR 6/10",
+   "munsell_requested": "7.5YR 6/10",
+   "xyY_C": [
+    0.4904,
+    0.422,
+    0.29301
+   ],
+   "Lab_D50": [
+    61.6,
+    23.67,
+    58.56
+   ],
+   "sRGB_D65": "#CC8325",
+   "sRGB_in_gamut": true,
+   "CMYK_generic_pct": [
+    4.3,
+    45.5,
+    95.3,
+    9.4
+   ],
+   "gamut_dE2000": 1.92,
+   "x_mm": 30.5,
+   "y_mm": 39.5,
+   "centre_mm": [
+    35.0,
+    44.0
+   ],
+   "u": 0.2059,
+   "v": 0.4855,
+   "size_mm": [
+    9.0,
+    9.0
+   ]
+  },
+  {
+   "id": "C3",
+   "group": "plant",
+   "row": 3,
+   "col": 3,
+   "label": "anthocyanin red",
+   "munsell": "2.5R 4/10",
+   "munsell_requested": "2.5R 4/10",
+   "xyY_C": [
+    0.4774,
+    0.2969,
+    0.11701
+   ],
+   "Lab_D50": [
+    41.09,
+    45.83,
+    14.23
+   ],
+   "sRGB_D65": "#A53A4C",
+   "sRGB_in_gamut": true,
+   "CMYK_generic_pct": [
+    15.3,
+    87.5,
+    52.9,
+    14.9
+   ],
+   "gamut_dE2000": 0.39,
+   "x_mm": 40.5,
+   "y_mm": 39.5,
+   "centre_mm": [
+    45.0,
+    44.0
+   ],
+   "u": 0.2899,
+   "v": 0.4855,
+   "size_mm": [
+    9.0,
+    9.0
+   ]
+  },
+  {
+   "id": "C4",
+   "group": "plant",
+   "row": 3,
+   "col": 4,
+   "label": "dark anthocyanin red",
+   "munsell": "2.5R 3/8",
+   "munsell_requested": "2.5R 3/8",
+   "xyY_C": [
+    0.4821,
+    0.2918,
+    0.06391
+   ],
+   "Lab_D50": [
+    30.67,
+    39.6,
+    11.23
+   ],
+   "sRGB_D65": "#802739",
+   "sRGB_in_gamut": true,
+   "CMYK_generic_pct": [
+    21.6,
+    91.4,
+    57.3,
+    31.4
+   ],
+   "gamut_dE2000": 0.82,
+   "x_mm": 50.5,
+   "y_mm": 39.5,
+   "centre_mm": [
+    55.0,
+    44.0
+   ],
+   "u": 0.3739,
+   "v": 0.4855,
+   "size_mm": [
+    9.0,
+    9.0
+   ]
+  },
+  {
+   "id": "C5",
+   "group": "plant",
+   "row": 3,
+   "col": 5,
+   "label": "anthocyanin purple-red",
+   "munsell": "5RP 3/8",
+   "munsell_requested": "5RP 3/8",
+   "xyY_C": [
+    0.393,
+    0.2395,
+    0.06391
+   ],
+   "Lab_D50": [
+    30.45,
+    37.86,
+    -6.85
+   ],
+   "sRGB_D65": "#782A54",
+   "sRGB_in_gamut": true,
+   "CMYK_generic_pct": [
+    34.1,
+    90.6,
+    24.3,
+    25.9
+   ],
+   "gamut_dE2000": 0.54,
+   "x_mm": 60.5,
+   "y_mm": 39.5,
+   "centre_mm": [
+    65.0,
+    44.0
+   ],
+   "u": 0.458,
+   "v": 0.4855,
+   "size_mm": [
+    9.0,
+    9.0
+   ]
+  },
+  {
+   "id": "C6",
+   "group": "plant",
+   "row": 3,
+   "col": 6,
+   "label": "pink-purple petiole/petal",
+   "munsell": "5RP 5/10",
+   "munsell_requested": "5RP 5/10",
+   "xyY_C": [
+    0.388,
+    0.263,
+    0.19272
+   ],
+   "Lab_D50": [
+    51.13,
+    42.96,
+    -4.01
+   ],
+   "sRGB_D65": "#B95982",
+   "sRGB_in_gamut": true,
+   "CMYK_generic_pct": [
+    17.6,
+    74.5,
+    14.1,
+    3.9
+   ],
+   "gamut_dE2000": 0.36,
+   "x_mm": 70.5,
+   "y_mm": 39.5,
+   "centre_mm": [
+    75.0,
+    44.0
+   ],
+   "u": 0.542,
+   "v": 0.4855,
+   "size_mm": [
+    9.0,
+    9.0
+   ]
+  },
+  {
+   "id": "C7",
+   "group": "plant",
+   "row": 3,
+   "col": 7,
+   "label": "necrotic brown",
+   "munsell": "5YR 3/4",
+   "munsell_requested": "5YR 3/4",
+   "xyY_C": [
+    0.4376,
+    0.3715,
+    0.06391
+   ],
+   "Lab_D50": [
+    30.63,
+    14.53,
+    19.67
+   ],
+   "sRGB_D65": "#633F2A",
+   "sRGB_in_gamut": true,
+   "CMYK_generic_pct": [
+    36.9,
+    68.6,
+    85.5,
+    38.0
+   ],
+   "gamut_dE2000": 0.51,
+   "x_mm": 80.5,
+   "y_mm": 39.5,
+   "centre_mm": [
+    85.0,
+    44.0
+   ],
+   "u": 0.6261,
+   "v": 0.4855,
+   "size_mm": [
+    9.0,
+    9.0
+   ]
+  },
+  {
+   "id": "C8",
+   "group": "plant",
+   "row": 3,
+   "col": 8,
+   "label": "browned tissue",
+   "munsell": "7.5YR 4/4",
+   "munsell_requested": "7.5YR 4/4",
+   "xyY_C": [
+    0.4208,
+    0.3809,
+    0.11701
+   ],
+   "Lab_D50": [
+    41.01,
+    12.21,
+    23.65
+   ],
+   "sRGB_D65": "#7C593A",
+   "sRGB_in_gamut": true,
+   "CMYK_generic_pct": [
+    36.1,
+    56.9,
+    81.2,
+    23.9
+   ],
+   "gamut_dE2000": 1.2,
+   "x_mm": 90.5,
+   "y_mm": 39.5,
+   "centre_mm": [
+    95.0,
+    44.0
+   ],
+   "u": 0.7101,
+   "v": 0.4855,
+   "size_mm": [
+    9.0,
+    9.0
+   ]
+  },
+  {
+   "id": "C9",
+   "group": "plant",
+   "row": 3,
+   "col": 9,
+   "label": "white root / mycelium",
+   "munsell": "2.5Y 9/2",
+   "munsell_requested": "2.5Y 9/2",
+   "xyY_C": [
+    0.339,
+    0.3472,
+    0.76696
+   ],
+   "Lab_D50": [
+    90.36,
+    1.06,
+    15.81
+   ],
+   "sRGB_D65": "#EFE2C5",
+   "sRGB_in_gamut": true,
+   "CMYK_generic_pct": [
+    6.3,
+    7.8,
+    20.4,
+    0.0
+   ],
+   "gamut_dE2000": 1.68,
+   "x_mm": 100.5,
+   "y_mm": 39.5,
+   "centre_mm": [
+    105.0,
+    44.0
+   ],
+   "u": 0.7941,
+   "v": 0.4855,
+   "size_mm": [
+    9.0,
+    9.0
+   ]
+  },
+  {
+   "id": "C10",
+   "group": "plant",
+   "row": 3,
+   "col": 10,
+   "label": "tan root",
+   "munsell": "7.5YR 7/4",
+   "munsell_requested": "7.5YR 7/4",
+   "xyY_C": [
+    0.3772,
+    0.3613,
+    0.41985
+   ],
+   "Lab_D50": [
+    71.14,
+    10.38,
+    22.87
+   ],
+   "sRGB_D65": "#CBA785",
+   "sRGB_in_gamut": true,
+   "CMYK_generic_pct": [
+    16.5,
+    31.4,
+    45.9,
+    1.2
+   ],
+   "gamut_dE2000": 1.25,
+   "x_mm": 110.5,
+   "y_mm": 39.5,
+   "centre_mm": [
+    115.0,
+    44.0
+   ],
+   "u": 0.8782,
+   "v": 0.4855,
+   "size_mm": [
+    9.0,
+    9.0
+   ]
+  },
+  {
+   "id": "D1",
+   "group": "soil",
+   "row": 4,
+   "col": 1,
+   "label": "dark red",
+   "munsell": "10R 3/6",
+   "munsell_requested": "10R 3/6",
+   "xyY_C": [
+    0.4854,
+    0.3467,
+    0.06391
+   ],
+   "Lab_D50": [
+    30.69,
+    27.25,
+    21.11
+   ],
+   "sRGB_D65": "#733529",
+   "sRGB_in_gamut": true,
+   "CMYK_generic_pct": [
+    27.5,
+    80.4,
+    83.9,
+    35.3
+   ],
+   "gamut_dE2000": 1.14,
+   "x_mm": 20.5,
+   "y_mm": 49.5,
+   "centre_mm": [
+    25.0,
+    54.0
+   ],
+   "u": 0.1218,
+   "v": 0.6304,
+   "size_mm": [
+    9.0,
+    9.0
+   ]
+  },
+  {
+   "id": "D2",
+   "group": "soil",
+   "row": 4,
+   "col": 2,
+   "label": "red",
+   "munsell": "10R 4/8",
+   "munsell_requested": "10R 4/8",
+   "xyY_C": [
+    0.4995,
+    0.3557,
+    0.11701
+   ],
+   "Lab_D50": [
+    41.15,
+    33.78,
+    29.92
+   ],
+   "sRGB_D65": "#9A4832",
+   "sRGB_in_gamut": true,
+   "CMYK_generic_pct": [
+    18.4,
+    76.5,
+    85.5,
+    19.6
+   ],
+   "gamut_dE2000": 0.84,
+   "x_mm": 30.5,
+   "y_mm": 49.5,
+   "centre_mm": [
+    35.0,
+    54.0
+   ],
+   "u": 0.2059,
+   "v": 0.6304,
+   "size_mm": [
+    9.0,
+    9.0
+   ]
+  },
+  {
+   "id": "D3",
+   "group": "soil",
+   "row": 4,
+   "col": 3,
+   "label": "dark reddish brown",
+   "munsell": "2.5YR 3/4",
+   "munsell_requested": "2.5YR 3/4",
+   "xyY_C": [
+    0.436,
+    0.3563,
+    0.06391
+   ],
+   "Lab_D50": [
+    30.62,
+    17.12,
+    17.13
+   ],
+   "sRGB_D65": "#663D2E",
+   "sRGB_in_gamut": true,
+   "CMYK_generic_pct": [
+    40.4,
+    73.7,
+    82.7,
+    33.7
+   ],
+   "gamut_dE2000": 0.81,
+   "x_mm": 40.5,
+   "y_mm": 49.5,
+   "centre_mm": [
+    45.0,
+    54.0
+   ],
+   "u": 0.2899,
+   "v": 0.6304,
+   "size_mm": [
+    9.0,
+    9.0
+   ]
+  },
+  {
+   "id": "D4",
+   "group": "soil",
+   "row": 4,
+   "col": 4,
+   "label": "red",
+   "munsell": "2.5YR 4/6",
+   "munsell_requested": "2.5YR 4/6",
+   "xyY_C": [
+    0.4612,
+    0.3674,
+    0.11701
+   ],
+   "Lab_D50": [
+    41.08,
+    23.5,
+    26.52
+   ],
+   "sRGB_D65": "#8C5136",
+   "sRGB_in_gamut": true,
+   "CMYK_generic_pct": [
+    25.9,
+    67.8,
+    82.7,
+    22.0
+   ],
+   "gamut_dE2000": 0.52,
+   "x_mm": 50.5,
+   "y_mm": 49.5,
+   "centre_mm": [
+    55.0,
+    54.0
+   ],
+   "u": 0.3739,
+   "v": 0.6304,
+   "size_mm": [
+    9.0,
+    9.0
+   ]
+  },
+  {
+   "id": "D5",
+   "group": "soil",
+   "row": 4,
+   "col": 5,
+   "label": "light reddish brown",
+   "munsell": "2.5YR 6/4",
+   "munsell_requested": "2.5YR 6/4",
+   "xyY_C": [
+    0.3806,
+    0.3467,
+    0.29301
+   ],
+   "Lab_D50": [
+    61.29,
+    14.78,
+    17.19
+   ],
+   "sRGB_D65": "#B58A76",
+   "sRGB_in_gamut": true,
+   "CMYK_generic_pct": [
+    24.3,
+    44.7,
+    48.2,
+    1.6
+   ],
+   "gamut_dE2000": 0.75,
+   "x_mm": 60.5,
+   "y_mm": 49.5,
+   "centre_mm": [
+    65.0,
+    54.0
+   ],
+   "u": 0.458,
+   "v": 0.6304,
+   "size_mm": [
+    9.0,
+    9.0
+   ]
+  },
+  {
+   "id": "D6",
+   "group": "soil",
+   "row": 4,
+   "col": 6,
+   "label": "black",
+   "munsell": "5YR 2.5/1",
+   "munsell_requested": "5YR 2.5/1",
+   "xyY_C": [
+    0.34667,
+    0.33188,
+    0.04499
+   ],
+   "Lab_D50": [
+    25.33,
+    4.41,
+    4.67
+   ],
+   "sRGB_D65": "#453A35",
+   "sRGB_in_gamut": true,
+   "CMYK_generic_pct": [
+    64.7,
+    70.2,
+    72.5,
+    36.9
+   ],
+   "gamut_dE2000": 0.63,
+   "x_mm": 70.5,
+   "y_mm": 49.5,
+   "centre_mm": [
+    75.0,
+    54.0
+   ],
+   "u": 0.542,
+   "v": 0.6304,
+   "size_mm": [
+    9.0,
+    9.0
+   ]
+  },
+  {
+   "id": "D7",
+   "group": "soil",
+   "row": 4,
+   "col": 7,
+   "label": "reddish brown",
+   "munsell": "5YR 4/4",
+   "munsell_requested": "5YR 4/4",
+   "xyY_C": [
+    0.4187,
+    0.3679,
+    0.11701
+   ],
+   "Lab_D50": [
+    41.0,
+    14.6,
+    20.97
+   ],
+   "sRGB_D65": "#7F573F",
+   "sRGB_in_gamut": true,
+   "CMYK_generic_pct": [
+    37.6,
+    62.4,
+    77.6,
+    19.6
+   ],
+   "gamut_dE2000": 0.74,
+   "x_mm": 80.5,
+   "y_mm": 49.5,
+   "centre_mm": [
+    85.0,
+    54.0
+   ],
+   "u": 0.6261,
+   "v": 0.6304,
+   "size_mm": [
+    9.0,
+    9.0
+   ]
+  },
+  {
+   "id": "D8",
+   "group": "soil",
+   "row": 4,
+   "col": 8,
+   "label": "yellowish red",
+   "munsell": "5YR 5/8",
+   "munsell_requested": "5YR 5/8",
+   "xyY_C": [
+    0.483,
+    0.396,
+    0.19272
+   ],
+   "Lab_D50": [
+    51.46,
+    25.24,
+    42.32
+   ],
+   "sRGB_D65": "#AE6931",
+   "sRGB_in_gamut": true,
+   "CMYK_generic_pct": [
+    12.2,
+    56.5,
+    89.8,
+    16.1
+   ],
+   "gamut_dE2000": 0.93,
+   "x_mm": 90.5,
+   "y_mm": 49.5,
+   "centre_mm": [
+    95.0,
+    54.0
+   ],
+   "u": 0.7101,
+   "v": 0.6304,
+   "size_mm": [
+    9.0,
+    9.0
+   ]
+  },
+  {
+   "id": "D9",
+   "group": "soil",
+   "row": 4,
+   "col": 9,
+   "label": "very dark brown",
+   "munsell": "7.5YR 2.5/2",
+   "munsell_requested": "7.5YR 2.5/2",
+   "xyY_C": [
+    0.38378,
+    0.35722,
+    0.04499
+   ],
+   "Lab_D50": [
+    25.4,
+    6.7,
+    10.85
+   ],
+   "sRGB_D65": "#4A382C",
+   "sRGB_in_gamut": true,
+   "CMYK_generic_pct": [
+    51.8,
+    66.7,
+    79.2,
+    44.3
+   ],
+   "gamut_dE2000": 1.06,
+   "x_mm": 100.5,
+   "y_mm": 49.5,
+   "centre_mm": [
+    105.0,
+    54.0
+   ],
+   "u": 0.7941,
+   "v": 0.6304,
+   "size_mm": [
+    9.0,
+    9.0
+   ]
+  },
+  {
+   "id": "D10",
+   "group": "soil",
+   "row": 4,
+   "col": 10,
+   "label": "brown",
+   "munsell": "7.5YR 4/2",
+   "munsell_requested": "7.5YR 4/2",
+   "xyY_C": [
+    0.3662,
+    0.3504,
+    0.11701
+   ],
+   "Lab_D50": [
+    40.89,
+    6.61,
+    11.79
+   ],
+   "sRGB_D65": "#705C4D",
+   "sRGB_in_gamut": true,
+   "CMYK_generic_pct": [
+    52.2,
+    59.6,
+    69.0,
+    15.3
+   ],
+   "gamut_dE2000": 0.79,
+   "x_mm": 110.5,
+   "y_mm": 49.5,
+   "centre_mm": [
+    115.0,
+    54.0
+   ],
+   "u": 0.8782,
+   "v": 0.6304,
+   "size_mm": [
+    9.0,
+    9.0
+   ]
+  },
+  {
+   "id": "E1",
+   "group": "soil",
+   "row": 5,
+   "col": 1,
+   "label": "strong brown",
+   "munsell": "7.5YR 5/6",
+   "munsell_requested": "7.5YR 5/6",
+   "xyY_C": [
+    0.444,
+    0.3954,
+    0.19272
+   ],
+   "Lab_D50": [
+    51.38,
+    16.45,
+    34.89
+   ],
+   "sRGB_D65": "#A16F3F",
+   "sRGB_in_gamut": true,
+   "CMYK_generic_pct": [
+    22.4,
+    50.2,
+    82.7,
+    16.1
+   ],
+   "gamut_dE2000": 0.97,
+   "x_mm": 20.5,
+   "y_mm": 59.5,
+   "centre_mm": [
+    25.0,
+    64.0
+   ],
+   "u": 0.1218,
+   "v": 0.7754,
+   "size_mm": [
+    9.0,
+    9.0
+   ]
+  },
+  {
+   "id": "E2",
+   "group": "soil",
+   "row": 5,
+   "col": 2,
+   "label": "black",
+   "munsell": "10YR 2/1",
+   "munsell_requested": "10YR 2/1",
+   "xyY_C": [
+    0.34863,
+    0.34248,
+    0.03048
+   ],
+   "Lab_D50": [
+    20.31,
+    2.61,
+    5.46
+   ],
+   "sRGB_D65": "#373029",
+   "sRGB_in_gamut": true,
+   "CMYK_generic_pct": [
+    65.9,
+    71.0,
+    74.5,
+    47.8
+   ],
+   "gamut_dE2000": 0.93,
+   "x_mm": 30.5,
+   "y_mm": 59.5,
+   "centre_mm": [
+    35.0,
+    64.0
+   ],
+   "u": 0.2059,
+   "v": 0.7754,
+   "size_mm": [
+    9.0,
+    9.0
+   ]
+  },
+  {
+   "id": "E3",
+   "group": "soil",
+   "row": 5,
+   "col": 3,
+   "label": "very dark grayish brown",
+   "munsell": "10YR 3/2",
+   "munsell_requested": "10YR 3/2",
+   "xyY_C": [
+    0.3747,
+    0.363,
+    0.06391
+   ],
+   "Lab_D50": [
+    30.53,
+    4.76,
+    12.23
+   ],
+   "sRGB_D65": "#544535",
+   "sRGB_in_gamut": true,
+   "CMYK_generic_pct": [
+    54.9,
+    63.1,
+    78.4,
+    33.7
+   ],
+   "gamut_dE2000": 0.96,
+   "x_mm": 40.5,
+   "y_mm": 59.5,
+   "centre_mm": [
+    45.0,
+    64.0
+   ],
+   "u": 0.2899,
+   "v": 0.7754,
+   "size_mm": [
+    9.0,
+    9.0
+   ]
+  },
+  {
+   "id": "E4",
+   "group": "soil",
+   "row": 5,
+   "col": 4,
+   "label": "dark gray",
+   "munsell": "10YR 4/1",
+   "munsell_requested": "10YR 4/1",
+   "xyY_C": [
+    0.33803,
+    0.33758,
+    0.11701
+   ],
+   "Lab_D50": [
+    40.82,
+    2.5,
+    6.62
+   ],
+   "sRGB_D65": "#685F56",
+   "sRGB_in_gamut": true,
+   "CMYK_generic_pct": [
+    59.6,
+    57.3,
+    63.1,
+    13.3
+   ],
+   "gamut_dE2000": 2.14,
+   "x_mm": 50.5,
+   "y_mm": 59.5,
+   "centre_mm": [
+    55.0,
+    64.0
+   ],
+   "u": 0.3739,
+   "v": 0.7754,
+   "size_mm": [
+    9.0,
+    9.0
+   ]
+  },
+  {
+   "id": "E5",
+   "group": "soil",
+   "row": 5,
+   "col": 5,
+   "label": "brown",
+   "munsell": "10YR 5/3",
+   "munsell_requested": "10YR 5/3",
+   "xyY_C": [
+    0.37705,
+    0.3677,
+    0.19272
+   ],
+   "Lab_D50": [
+    51.23,
+    6.33,
+    18.97
+   ],
+   "sRGB_D65": "#8D765A",
+   "sRGB_in_gamut": true,
+   "CMYK_generic_pct": [
+    40.4,
+    47.5,
+    66.3,
+    8.2
+   ],
+   "gamut_dE2000": 0.77,
+   "x_mm": 60.5,
+   "y_mm": 59.5,
+   "centre_mm": [
+    65.0,
+    64.0
+   ],
+   "u": 0.458,
+   "v": 0.7754,
+   "size_mm": [
+    9.0,
+    9.0
+   ]
+  },
+  {
+   "id": "E6",
+   "group": "soil",
+   "row": 5,
+   "col": 6,
+   "label": "gray",
+   "munsell": "10YR 6/1",
+   "munsell_requested": "10YR 6/1",
+   "xyY_C": [
+    0.32958,
+    0.33223,
+    0.29301
+   ],
+   "Lab_D50": [
+    61.13,
+    2.06,
+    6.55
+   ],
+   "sRGB_D65": "#9B9288",
+   "sRGB_in_gamut": true,
+   "CMYK_generic_pct": [
+    37.6,
+    35.7,
+    40.0,
+    1.2
+   ],
+   "gamut_dE2000": 1.56,
+   "x_mm": 70.5,
+   "y_mm": 59.5,
+   "centre_mm": [
+    75.0,
+    64.0
+   ],
+   "u": 0.542,
+   "v": 0.7754,
+   "size_mm": [
+    9.0,
+    9.0
+   ]
+  },
+  {
+   "id": "E7",
+   "group": "soil",
+   "row": 5,
+   "col": 7,
+   "label": "brownish yellow",
+   "munsell": "10YR 6/8",
+   "munsell_requested": "10YR 6/8",
+   "xyY_C": [
+    0.457,
+    0.4249,
+    0.29301
+   ],
+   "Lab_D50": [
+    61.52,
+    14.45,
+    50.91
+   ],
+   "sRGB_D65": "#BE8A36",
+   "sRGB_in_gamut": true,
+   "CMYK_generic_pct": [
+    10.2,
+    37.3,
+    89.4,
+    13.3
+   ],
+   "gamut_dE2000": 1.16,
+   "x_mm": 80.5,
+   "y_mm": 59.5,
+   "centre_mm": [
+    85.0,
+    64.0
+   ],
+   "u": 0.6261,
+   "v": 0.7754,
+   "size_mm": [
+    9.0,
+    9.0
+   ]
+  },
+  {
+   "id": "E8",
+   "group": "soil",
+   "row": 5,
+   "col": 8,
+   "label": "very pale brown",
+   "munsell": "10YR 7/3",
+   "munsell_requested": "10YR 7/3",
+   "xyY_C": [
+    0.36105,
+    0.35865,
+    0.41985
+   ],
+   "Lab_D50": [
+    71.09,
+    5.4,
+    19.49
+   ],
+   "sRGB_D65": "#C2AA8B",
+   "sRGB_in_gamut": true,
+   "CMYK_generic_pct": [
+    21.6,
+    27.8,
+    42.7,
+    0.8
+   ],
+   "gamut_dE2000": 1.45,
+   "x_mm": 90.5,
+   "y_mm": 59.5,
+   "centre_mm": [
+    95.0,
+    64.0
+   ],
+   "u": 0.7101,
+   "v": 0.7754,
+   "size_mm": [
+    9.0,
+    9.0
+   ]
+  },
+  {
+   "id": "E9",
+   "group": "soil",
+   "row": 5,
+   "col": 9,
+   "label": "olive yellow",
+   "munsell": "2.5Y 6/6",
+   "munsell_requested": "2.5Y 6/6",
+   "xyY_C": [
+    0.4203,
+    0.4176,
+    0.29301
+   ],
+   "Lab_D50": [
+    61.44,
+    6.48,
+    41.26
+   ],
+   "sRGB_D65": "#B08F4A",
+   "sRGB_in_gamut": true,
+   "CMYK_generic_pct": [
+    19.6,
+    32.2,
+    80.0,
+    12.5
+   ],
+   "gamut_dE2000": 1.17,
+   "x_mm": 100.5,
+   "y_mm": 59.5,
+   "centre_mm": [
+    105.0,
+    64.0
+   ],
+   "u": 0.7941,
+   "v": 0.7754,
+   "size_mm": [
+    9.0,
+    9.0
+   ]
+  },
+  {
+   "id": "E10",
+   "group": "soil",
+   "row": 5,
+   "col": 10,
+   "label": "light gray",
+   "munsell": "2.5Y 7/1",
+   "munsell_requested": "2.5Y 7/1",
+   "xyY_C": [
+    0.32683,
+    0.33343,
+    0.41985
+   ],
+   "Lab_D50": [
+    70.95,
+    0.78,
+    7.31
+   ],
+   "sRGB_D65": "#B3ADA0",
+   "sRGB_in_gamut": true,
+   "CMYK_generic_pct": [
+    27.1,
+    25.1,
+    29.4,
+    0.4
+   ],
+   "gamut_dE2000": 1.09,
+   "x_mm": 110.5,
+   "y_mm": 59.5,
+   "centre_mm": [
+    115.0,
+    64.0
+   ],
+   "u": 0.8782,
+   "v": 0.7754,
+   "size_mm": [
+    9.0,
+    9.0
+   ]
+  },
+  {
+   "id": "G1",
+   "group": "neutral ramp",
+   "row": 6,
+   "col": 1,
+   "label": "neutral value 9.5",
+   "munsell": "N9.5",
+   "munsell_requested": "N9.5",
+   "xyY_C": [
+    0.31006,
+    0.31616,
+    0.87756
+   ],
+   "Lab_D50": [
+    95.06,
+    0.0,
+    -0.0
+   ],
+   "sRGB_D65": "#F1F1F1",
+   "sRGB_in_gamut": true,
+   "CMYK_generic_pct": [
+    3.9,
+    3.1,
+    2.4,
+    0.0
+   ],
+   "gamut_dE2000": 0.37,
+   "x_mm": 20.5,
+   "y_mm": 70.0,
+   "centre_mm": [
+    24.4,
+    73.75
+   ],
+   "u": 0.1168,
+   "v": 0.9167,
+   "size_mm": [
+    7.792,
+    7.5
+   ]
+  },
+  {
+   "id": "G2",
+   "group": "neutral ramp",
+   "row": 6,
+   "col": 2,
+   "label": "neutral value 9",
+   "munsell": "N9",
+   "munsell_requested": "N9",
+   "xyY_C": [
+    0.31006,
+    0.31616,
+    0.76696
+   ],
+   "Lab_D50": [
+    90.18,
+    0.0,
+    -0.0
+   ],
+   "sRGB_D65": "#E3E3E3",
+   "sRGB_in_gamut": true,
+   "CMYK_generic_pct": [
+    8.2,
+    6.7,
+    5.1,
+    0.0
+   ],
+   "gamut_dE2000": 0.5,
+   "x_mm": 28.79,
+   "y_mm": 70.0,
+   "centre_mm": [
+    32.69,
+    73.75
+   ],
+   "u": 0.1864,
+   "v": 0.9167,
+   "size_mm": [
+    7.792,
+    7.5
+   ]
+  },
+  {
+   "id": "G3",
+   "group": "neutral ramp",
+   "row": 6,
+   "col": 3,
+   "label": "neutral value 8",
+   "munsell": "N8",
+   "munsell_requested": "N8",
+   "xyY_C": [
+    0.31006,
+    0.31616,
+    0.5762
+   ],
+   "Lab_D50": [
+    80.53,
+    0.0,
+    -0.0
+   ],
+   "sRGB_D65": "#C8C8C8",
+   "sRGB_in_gamut": true,
+   "CMYK_generic_pct": [
+    19.2,
+    14.5,
+    12.5,
+    0.0
+   ],
+   "gamut_dE2000": 1.45,
+   "x_mm": 37.08,
+   "y_mm": 70.0,
+   "centre_mm": [
+    40.98,
+    73.75
+   ],
+   "u": 0.2561,
+   "v": 0.9167,
+   "size_mm": [
+    7.792,
+    7.5
+   ]
+  },
+  {
+   "id": "G4",
+   "group": "neutral ramp",
+   "row": 6,
+   "col": 4,
+   "label": "neutral value 7",
+   "munsell": "N7",
+   "munsell_requested": "N7",
+   "xyY_C": [
+    0.31006,
+    0.31616,
+    0.41985
+   ],
+   "Lab_D50": [
+    70.86,
+    0.0,
+    0.0
+   ],
+   "sRGB_D65": "#ADADAD",
+   "sRGB_in_gamut": true,
+   "CMYK_generic_pct": [
+    29.4,
+    24.3,
+    21.6,
+    0.0
+   ],
+   "gamut_dE2000": 0.09,
+   "x_mm": 45.38,
+   "y_mm": 70.0,
+   "centre_mm": [
+    49.27,
+    73.75
+   ],
+   "u": 0.3258,
+   "v": 0.9167,
+   "size_mm": [
+    7.792,
+    7.5
+   ]
+  },
+  {
+   "id": "G5",
+   "group": "neutral ramp",
+   "row": 6,
+   "col": 5,
+   "label": "neutral value 6",
+   "munsell": "N6",
+   "munsell_requested": "N6",
+   "xyY_C": [
+    0.31006,
+    0.31616,
+    0.29301
+   ],
+   "Lab_D50": [
+    61.05,
+    0.0,
+    -0.0
+   ],
+   "sRGB_D65": "#939393",
+   "sRGB_in_gamut": true,
+   "CMYK_generic_pct": [
+    41.6,
+    34.5,
+    31.4,
+    0.8
+   ],
+   "gamut_dE2000": 1.74,
+   "x_mm": 53.67,
+   "y_mm": 70.0,
+   "centre_mm": [
+    57.56,
+    73.75
+   ],
+   "u": 0.3955,
+   "v": 0.9167,
+   "size_mm": [
+    7.792,
+    7.5
+   ]
+  },
+  {
+   "id": "G6",
+   "group": "neutral ramp",
+   "row": 6,
+   "col": 6,
+   "label": "neutral value 5",
+   "munsell": "N5",
+   "munsell_requested": "N5",
+   "xyY_C": [
+    0.31006,
+    0.31616,
+    0.19272
+   ],
+   "Lab_D50": [
+    51.0,
+    0.0,
+    -0.0
+   ],
+   "sRGB_D65": "#797979",
+   "sRGB_in_gamut": true,
+   "CMYK_generic_pct": [
+    54.1,
+    46.3,
+    42.7,
+    2.7
+   ],
+   "gamut_dE2000": 0.98,
+   "x_mm": 61.96,
+   "y_mm": 70.0,
+   "centre_mm": [
+    65.85,
+    73.75
+   ],
+   "u": 0.4652,
+   "v": 0.9167,
+   "size_mm": [
+    7.792,
+    7.5
+   ]
+  },
+  {
+   "id": "G7",
+   "group": "neutral ramp",
+   "row": 6,
+   "col": 7,
+   "label": "neutral value 4",
+   "munsell": "N4",
+   "munsell_requested": "N4",
+   "xyY_C": [
+    0.31006,
+    0.31616,
+    0.11701
+   ],
+   "Lab_D50": [
+    40.74,
+    0.0,
+    -0.0
+   ],
+   "sRGB_D65": "#606060",
+   "sRGB_in_gamut": true,
+   "CMYK_generic_pct": [
+    66.3,
+    58.4,
+    54.5,
+    9.0
+   ],
+   "gamut_dE2000": 1.73,
+   "x_mm": 70.25,
+   "y_mm": 70.0,
+   "centre_mm": [
+    74.15,
+    73.75
+   ],
+   "u": 0.5348,
+   "v": 0.9167,
+   "size_mm": [
+    7.792,
+    7.5
+   ]
+  },
+  {
+   "id": "G8",
+   "group": "neutral ramp",
+   "row": 6,
+   "col": 8,
+   "label": "neutral value 3.5",
+   "munsell": "N3.5",
+   "munsell_requested": "N3.5",
+   "xyY_C": [
+    0.31006,
+    0.31616,
+    0.08778
+   ],
+   "Lab_D50": [
+    35.55,
+    0.0,
+    -0.0
+   ],
+   "sRGB_D65": "#545454",
+   "sRGB_in_gamut": true,
+   "CMYK_generic_pct": [
+    71.4,
+    64.3,
+    60.0,
+    14.5
+   ],
+   "gamut_dE2000": 1.46,
+   "x_mm": 78.54,
+   "y_mm": 70.0,
+   "centre_mm": [
+    82.44,
+    73.75
+   ],
+   "u": 0.6045,
+   "v": 0.9167,
+   "size_mm": [
+    7.792,
+    7.5
+   ]
+  },
+  {
+   "id": "G9",
+   "group": "neutral ramp",
+   "row": 6,
+   "col": 9,
+   "label": "neutral value 3",
+   "munsell": "N3",
+   "munsell_requested": "N3",
+   "xyY_C": [
+    0.31006,
+    0.31616,
+    0.06391
+   ],
+   "Lab_D50": [
+    30.38,
+    0.0,
+    0.0
+   ],
+   "sRGB_D65": "#474848",
+   "sRGB_in_gamut": true,
+   "CMYK_generic_pct": [
+    75.3,
+    69.4,
+    64.7,
+    22.4
+   ],
+   "gamut_dE2000": 0.45,
+   "x_mm": 86.83,
+   "y_mm": 70.0,
+   "centre_mm": [
+    90.73,
+    73.75
+   ],
+   "u": 0.6742,
+   "v": 0.9167,
+   "size_mm": [
+    7.792,
+    7.5
+   ]
+  },
+  {
+   "id": "G10",
+   "group": "neutral ramp",
+   "row": 6,
+   "col": 10,
+   "label": "neutral value 2.5",
+   "munsell": "N2.5",
+   "munsell_requested": "N2.5",
+   "xyY_C": [
+    0.31006,
+    0.31616,
+    0.04499
+   ],
+   "Lab_D50": [
+    25.26,
+    0.0,
+    0.0
+   ],
+   "sRGB_D65": "#3C3C3C",
+   "sRGB_in_gamut": true,
+   "CMYK_generic_pct": [
+    77.6,
+    72.9,
+    69.4,
+    30.6
+   ],
+   "gamut_dE2000": 1.51,
+   "x_mm": 95.13,
+   "y_mm": 70.0,
+   "centre_mm": [
+    99.02,
+    73.75
+   ],
+   "u": 0.7439,
+   "v": 0.9167,
+   "size_mm": [
+    7.792,
+    7.5
+   ]
+  },
+  {
+   "id": "G11",
+   "group": "neutral ramp",
+   "row": 6,
+   "col": 11,
+   "label": "neutral value 2",
+   "munsell": "N2",
+   "munsell_requested": "N2",
+   "xyY_C": [
+    0.31006,
+    0.31616,
+    0.03048
+   ],
+   "Lab_D50": [
+    20.24,
+    0.0,
+    0.0
+   ],
+   "sRGB_D65": "#313131",
+   "sRGB_in_gamut": true,
+   "CMYK_generic_pct": [
+    79.2,
+    75.3,
+    71.4,
+    40.4
+   ],
+   "gamut_dE2000": 1.46,
+   "x_mm": 103.42,
+   "y_mm": 70.0,
+   "centre_mm": [
+    107.31,
+    73.75
+   ],
+   "u": 0.8136,
+   "v": 0.9167,
+   "size_mm": [
+    7.792,
+    7.5
+   ]
+  },
+  {
+   "id": "G12",
+   "group": "neutral ramp",
+   "row": 6,
+   "col": 12,
+   "label": "neutral value 1.5",
+   "munsell": "N1.5",
+   "munsell_requested": "N1.5",
+   "xyY_C": [
+    0.31006,
+    0.31616,
+    0.01971
+   ],
+   "Lab_D50": [
+    15.33,
+    0.0,
+    -0.0
+   ],
+   "sRGB_D65": "#262626",
+   "sRGB_in_gamut": true,
+   "CMYK_generic_pct": [
+    79.6,
+    75.7,
+    71.4,
+    52.9
+   ],
+   "gamut_dE2000": 1.45,
+   "x_mm": 111.71,
+   "y_mm": 70.0,
+   "centre_mm": [
+    115.6,
+    73.75
+   ],
+   "u": 0.8832,
+   "v": 0.9167,
+   "size_mm": [
+    7.792,
+    7.5
+   ]
+  }
+ ],
+ "gamut_log": [
+  "5Y 8/12: outside sRGB; chroma -> 5Y 8/10",
+  "2.5G 5/10: outside sRGB; chroma -> 2.5G 5/8",
+  "5B 5/8: outside sRGB; chroma -> 5B 5/6",
+  "7.5PB 3/12: out of CMYK gamut (dE2000 3.0); chroma -> 7.5PB 3/10"
+ ]
+}

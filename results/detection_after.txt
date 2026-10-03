@@ -1,0 +1,23 @@
+# app: /Users/drb_laptop/Documents/AstroBotany_calibration_image_sharing_and_analysis @ 773263b + uncommitted changes
+v1_flat_plain                  card v1 ids verified 4/4 max corner error 1.7 px OK
+v1_flat_cast_blur              card v1 ids verified 4/4 max corner error 1.5 px OK
+v1_persp_mild_plain            card v1 ids verified 4/4 max corner error 1.1 px OK
+v1_persp_mild_cast_blur        card v1 ids verified 4/4 max corner error 1.1 px OK
+v1_persp_strong_plain          card v1 ids verified 4/4 max corner error 1.3 px OK
+v1_persp_strong_cast_blur      card v1 ids verified 4/4 max corner error 1.2 px OK
+v1_rot15_plain                 card v1 ids verified 4/4 max corner error 1.5 px OK
+v1_rot15_cast_blur             card v1 ids verified 4/4 max corner error 1.3 px OK
+v1_rot180_plain                card v1 ids verified 4/4 max corner error 1.7 px OK
+v1_rot180_cast_blur            card v1 ids verified 4/4 max corner error 1.7 px OK
+all OK
+v2_flat_plain                  card v2 ids verified 4/4 max corner error 1.4 px OK
+v2_flat_cast_blur              card v2 ids verified 4/4 max corner error 1.4 px OK
+v2_persp_mild_plain            card v2 ids verified 4/4 max corner error 1.2 px OK
+v2_persp_mild_cast_blur        card v2 ids verified 4/4 max corner error 1.2 px OK
+v2_persp_strong_plain          card v2 ids verified 4/4 max corner error 1.1 px OK
+v2_persp_strong_cast_blur      card v2 ids verified 4/4 max corner error 1.2 px OK
+v2_rot15_plain                 card v2 ids verified 4/4 max corner error 1.5 px OK
+v2_rot15_cast_blur             card v2 ids verified 4/4 max corner error 1.5 px OK
+v2_rot180_plain                card v2 ids verified 4/4 max corner error 0.5 px OK
+v2_rot180_cast_blur            card v2 ids verified 4/4 max corner error 0.5 px OK
+all OK

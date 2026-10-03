@@ -1,0 +1,7 @@
+# Python 3.9+. numpy must stay <2 for colour-science 0.4.x.
+colour-science==0.4.4
+numpy<2
+scipy
+Pillow>=10
+reportlab>=4
+opencv-python-headless==4.10.0.84

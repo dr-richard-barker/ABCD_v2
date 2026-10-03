@@ -1,0 +1,13 @@
+v2 TL: id 0 bit grid matches OpenCV: True
+v2 TR: id 1 bit grid matches OpenCV: True
+v2 BR: id 2 bit grid matches OpenCV: True
+v2 BL: id 3 bit grid matches OpenCV: True
+v1 TL: id 47 bit grid matches OpenCV: True
+v1 TR: id 48 bit grid matches OpenCV: True
+v1 BR: id 49 bit grid matches OpenCV: True
+v1 BL: id 46 bit grid matches OpenCV: True
+min bits v2 vs v1: 5
+min bits within v2: 7
+min bits v2 vs own rotations: 8
+abcd_v2_preview.png: read {'BR': 2, 'BL': 3, 'TR': 1, 'TL': 0}  expected {'TL': 0, 'TR': 1, 'BR': 2, 'BL': 3}  OK
+ABC_v1_stickermule.png: read {'BL': 46, 'TR': 48, 'TL': 47, 'BR': 49}  expected {'TL': 47, 'TR': 48, 'BR': 49, 'BL': 46}  OK

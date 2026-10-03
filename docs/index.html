@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ABCD v2 calibration card</title>
+<meta name="description" content="Design, colour rationale, marker IDs and test results for the ABCD v2 AstroBotany calibration card.">
+<link rel="stylesheet" href="assets/site.css">
+<link rel="stylesheet" href="https://dr-richard-barker.github.io/Plant_response_to_radiation/cose/cose-chrome.css">
+<link rel="stylesheet" href="https://dr-richard-barker.github.io/Plant_response_to_radiation/cose/cose-map.css">
+</head>
+<body data-site-id="ABCD_v2" data-brand-logo="https://dr-richard-barker.github.io/Plant_response_to_radiation/cose/cose-logo.png">
+<main>
+
+<header>
+  <p class="muted mono">AstroBotany · calibration card · design proposal for discussion</p>
+  <h1>ABCD v2: a bigger calibration card with colours that mean something to plant and soil scientists</h1>
+  <p class="lede">A <span data-k="card"></span> card with <span data-k="nchips"></span> colour patches, each defined by a
+    Munsell colour notation and chosen to correspond to plant-tissue and soil colours. Its corner markers are standard
+    ArUco markers (IDs <span data-k="ids"></span>), so software can tell it apart from the original card (IDs <span data-k="v1ids"></span>).</p>
+  <img class="hero-img" src="assets/abcd_v2_preview.png" alt="The ABCD v2 calibration card: four black-and-white corner markers, a 10 cm ruler, a 5 cm vertical ruler, a checkerboard strip, five rows of colour chips and a grey ramp.">
+  <div class="btns">
+    <a class="btn primary" href="assets/abcd_v2_print.pdf">Print file (PDF)</a>
+    <a class="btn" href="assets/ABCD_v2_deck.pdf">Slide deck (PDF)</a>
+    <a class="btn" href="deck.html">Slides in the browser</a>
+    <a class="btn" href="assets/abcd_v2_chips.csv">Chip spec (CSV)</a>
+    <a class="btn" href="https://github.com/dr-richard-barker/ABCD_v2/issues?q=is%3Aissue+label%3Adiscussion">Open questions</a>
+    <a class="btn" href="https://github.com/dr-richard-barker/ABCD_v2">GitHub repo</a>
+  </div>
+</header>
+
+<h2 id="anatomy">What is on the card</h2>
+<figure>
+  <img src="assets/card_anatomy.png" alt="Annotated ABCD v2 card with nine numbered callouts.">
+  <figcaption>ABCD v2 at print size (<span data-k="card"></span>, plus 3 mm bleed in the print file). Callouts are drawn from the
+    layout geometry in <span class="mono">card/abcd_v2_chips.json</span> by <span class="mono">scripts/make_figures.py</span>.</figcaption>
+</figure>
+<div class="stats">
+  <div class="card stat"><div class="k">Colour chips</div><div class="v" data-k="nchips"></div></div>
+  <div class="card stat"><div class="k">Calibration</div><div class="v" data-k="ncal"></div></div>
+  <div class="card stat"><div class="k">Plant tissue</div><div class="v" data-k="nplant"></div></div>
+  <div class="card stat"><div class="k">Soil</div><div class="v" data-k="nsoil"></div></div>
+  <div class="card stat"><div class="k">Neutral ramp</div><div class="v" data-k="nramp"></div></div>
+</div>
+
+<h2 id="changes">What changed from v1</h2>
+<figure>
+  <img src="assets/versions_to_scale.png" alt="v1, v1.5 and v2 cards drawn side by side at the same scale.">
+  <figcaption>v1 (the StickerMule sticker), the v1.5 draft and v2, drawn at the same scale. Each card's scale is measured from
+    its own printed ruler (<span class="mono">scripts/make_figures.py</span>).</figcaption>
+</figure>
+<div class="table-wrap"><table>
+  <thead><tr><th></th><th>v1</th><th>v1.5 draft</th><th>v2</th></tr></thead>
+  <tbody>
+    <tr><td>Ruler</td><td>0–5 cm</td><td>0–10 cm</td><td>0–10 cm across + 0–5 cm down (checks that x and y scale agree)</td></tr>
+    <tr><td>Colour chips</td><td>5 primaries</td><td>40 saturated screen colours</td><td><span data-k="nchips"></span>, each a Munsell notation, in calibration / plant / soil groups</td></tr>
+    <tr><td>Frame</td><td>saturated red</td><td>saturated red</td><td>none; chips sit on black on a white card</td></tr>
+    <tr><td>Corner markers</td><td>ArUco IDs <span data-k="v1ids"></span></td><td>same as v1</td><td>ArUco IDs <span data-k="ids"></span>: the card identifies itself</td></tr>
+    <tr><td>Extras</td><td>rainbow strip, checker</td><td>checker</td><td>5 mm checker, version + batch code</td></tr>
+  </tbody>
+</table></div>
+<p><b>Why the red frame went:</b> red is the colour we most want to measure in plants (anthocyanin). A large saturated red area
+  next to the subject competes with it in segmentation and pulls the camera's automatic white balance.</p>
+<p><b>Why the v1.5 colours were replaced:</b> pure screen blue, red and cyan are outside what a sticker press can print, so the
+  printed patch would not match its file value. They also don't correspond to anything a plant or soil scientist records.</p>
+
+<h2 id="colour">How the colours were chosen</h2>
+<p>Every chip is a <b>Munsell notation</b> (hue value/chroma, e.g. <span class="mono">7.5YR 5/6</span>), the colour language soil
+  scientists already use in the field and the basis of the Munsell Plant Tissue charts. The notation is the design; the printed
+  colour is computed from it, then measured.</p>
+<div class="pipeline">
+  <div class="step"><b>1 · Notation</b>Soil chips from the Munsell soil-chart pages; plant hues from the Plant Tissue book; calibration hues around the colour circle.</div>
+  <div class="step"><b>2 · Renotation data</b>Munsell's published measurements turn each notation into CIE xyY (Illuminant C).</div>
+  <div class="step"><b>3 · Print + screen values</b>Converted to Lab (D50) for printing and measuring, and to sRGB for the artwork file.</div>
+  <div class="step"><b>4 · Gamut gate</b>Each chip must print (CMYK round trip, ΔE2000 ≤ 3) and fit sRGB; if not, its chroma steps down on the same hue page.</div>
+  <div class="step"><b>5 · Measure</b>Each printed batch is measured with a spectrophotometer; measured values replace the design values in the app.</div>
+</div>
+<p class="muted" style="font-size:.88rem">Pipeline as run: <span class="mono" data-k="pipeline"></span>.
+  Gate result: <span data-k="nswapped"></span> chips reduced (<span data-k="swapped"></span>); largest remaining ΔE2000 <span data-k="maxde"></span>
+  (<span class="mono">results/generator_log.txt</span>).</p>
+<div class="callout">The scanned Munsell PDF's pixel colours were <b>not</b> used. It's a photograph of the chart, so its colours depend on
+  the scanner. Only the notations and colour names were taken from it.</div>
+<p><b>Cross-check:</b> for the <span data-k="werthn"></span> chips it covers, our sRGB values match Andrew Werth's
+  <a href="https://www.andrewwerth.com/aboutmunsell/">Virtual Munsell Color Wheel</a> within <span data-k="werthd"></span>/255 per channel
+  (<span data-k="werthmiss"></span> soil chips use odd chromas or half values that tool doesn't show). It is built from the same renotation
+  data, so this checks our conversion, not the data itself (<span class="mono">results/werth_crosscheck.txt</span>).</p>
+
+<div class="groups">
+  <div class="card"><h3>Calibration row (A)</h3><p>White and black anchors plus eight hues spread around the colour circle at the
+    highest chroma that prints. Gives the colour-correction fit something to grip on in every direction.</p></div>
+  <div class="card"><h3>Plant tissue (B–C)</h3><p>Healthy leaf greens, chlorosis yellow-greens, senescence yellows/oranges,
+    anthocyanin reds and purples, necrotic browns, white and tan roots. Every hue is a page of the Munsell Plant Tissue Color Book;
+    the exact value/chroma are design targets to confirm with consultants.</p></div>
+  <div class="card"><h3>Soil (D–E)</h3><p>Twenty chips that exist on the soil-chart pages (10R to 2.5Y), each labelled with the name
+    printed there. The low-chroma greys span the darkness of grey regoliths. No chip claims to match a specific simulant or Apollo sample.</p></div>
+  <div class="card"><h3>Neutral ramp</h3><p>Twelve greys from N9.5 to N1.5, including N5 (≈ 18 % grey), for white balance and the
+    camera's tone curve.</p></div>
+</div>
+
+<h2 id="explorer">Chip explorer</h2>
+<p>Click a chip to see its notation, where it comes from, and its print, screen and gamut values. The grid is laid out as on the card.</p>
+<div class="filters" id="filters"></div>
+<div class="explorer">
+  <div><div class="cardgrid" id="grid"></div><div class="ramp" id="ramp"></div></div>
+  <div class="card detail" id="detail"></div>
+</div>
+<h3>All chips</h3>
+<div class="table-wrap" style="max-height:520px"><table id="chiptable"></table></div>
+<p class="muted" style="font-size:.85rem">Screen colours are approximate: your display isn't calibrated and the card isn't printed yet.
+  Lab D50 is the print/measurement target. CMYK is from macOS's Generic CMYK profile and is a guide only; the sticker printer uses its own.</p>
+
+<h2 id="markers">Corner markers: which card is this?</h2>
+<p>The corners are standard <a href="https://docs.opencv.org/4.x/d5/dae/tutorial_aruco_detection.html">ArUco markers</a> from OpenCV's
+  <span class="mono">DICT_4X4_50</span> dictionary (the "4x4" option on <a href="https://chev.me/arucogen/">chev.me/arucogen</a>). The original
+  card already used IDs <span data-k="v1ids"></span>; v2 uses IDs <span data-k="ids"></span>. Any ArUco reader therefore knows <i>which</i> card
+  is in the photo and which corner is which, even if the card is sideways or upside down.</p>
+<div class="groups" id="markers"></div>
+<p class="muted" style="font-size:.88rem">IDs 0–3 were the best-separated block of four in the dictionary: the minimum bit
+  differences from the v1 markers, between each other and from their own rotations are in the log below, so a misread is very unlikely.
+  OpenCV's own detector reads both cards correctly (<span class="mono">results/aruco_ids.txt</span>):</p>
+<pre class="card mono" id="arucolog" style="white-space:pre-wrap;font-size:.8rem"></pre>
+
+<h2 id="tests">Detection tests</h2>
+<p>The calibration app's own detector was run on synthetic photos of both cards: flat, tilted, rotated and upside down, each also
+  with a warm colour cast, noise and blur. Error is the largest distance between a found corner and the true marker centre.
+  "Before" is the app as committed; "after" adds marker-ID checking.</p>
+<div id="dettable"></div>
+<p class="muted" style="font-size:.88rem">Sources: <span class="mono">results/detection_before.txt</span>, <span class="mono">results/detection_after.txt</span>
+  (<span class="mono">scripts/run_all.sh</span>). What the "before" failures mean:</p>
+<ul>
+  <li><b>v2, tilted:</b> without ID checks, the 50-chip grid looks like a rectangle of squares and wins over the corner markers.</li>
+  <li><b>Both cards, upside down:</b> corners were sorted by screen position, so an inverted card had its chips matched to the wrong
+    references. Marker IDs fix the order.</li>
+</ul>
+<div class="callout"><b>Also found:</b> measured against its own printed ruler, the v1 card's markers are not 4.3 cm apart in both directions
+  as the app assumes. <span id="v1geo"></span> To confirm on a real photo before changing the app.</div>
+
+<h2 id="printing">Printing and measuring</h2>
+<ol>
+  <li>Print matte if possible: glare hides markers and chips (the app already has a fallback for photos where glare hides part of the card).</li>
+  <li>Measure at least 3 stickers from each batch, every chip, with a spectrophotometer (D50 / 2°). Record L*, a*, b* in
+    <a href="assets/batch_template.csv">the batch template</a>.</li>
+  <li>Flag any chip whose sticker-to-sticker difference exceeds ΔE2000 2.</li>
+  <li>Feed the measured values to the generator (<span class="mono">--measured</span>); they replace the design values the app uses.</li>
+  <li>Each print run gets its own batch number in the card's 8-cell code (3 bits version + 5 bits batch).</li>
+</ol>
+
+<h2 id="questions">Open questions for discussion</h2>
+<p>Each is a GitHub issue so comments stay in one place:
+  <a href="https://github.com/dr-richard-barker/ABCD_v2/issues?q=is%3Aissue+label%3Adiscussion">open questions</a>.</p>
+<ul>
+  <li>Are the plant-tissue shades the right ones, and should any be swapped for actual Plant Tissue book chips?</li>
+  <li>Should soil chips target specific regolith simulants (needs published Munsell values for them)?</li>
+  <li>Card format: sticker vs laminated card, size, matte finish.</li>
+  <li>Marker IDs and the version/batch numbering scheme for future cards.</li>
+  <li>The v1 scale discrepancy: confirm on real photos, then correct the app.</li>
+  <li>Who measures printed batches, and with what instrument?</li>
+</ul>
+
+<h2 id="sources">Files and sources</h2>
+<ul>
+  <li>Munsell Soil-Color Charts scan (hue pages 10R–2.5Y): <a href="https://soils.uga.edu/files/2016/08/Munsell.pdf">soils.uga.edu</a></li>
+  <li>Munsell Plant Tissue Color Book, list of its 17 hue pages: <a href="https://modeinfo.com/By-manufacturer/Munsell-Color/Munsell-Plant-Tissue-Color-Book-Scientific-Plant-Colour-Reference-Charts.html">vendor listing</a></li>
+  <li>Munsell renotation conversion: <a href="https://www.colour-science.org/">colour-science</a> (Python)</li>
+  <li>Cross-check: <a href="https://www.andrewwerth.com/aboutmunsell/">Andrew Werth, Virtual Munsell Color Wheel</a></li>
+  <li>ArUco markers: <a href="https://docs.opencv.org/4.x/d5/dae/tutorial_aruco_detection.html">OpenCV tutorial</a> ·
+    <a href="https://chev.me/arucogen/">ArUco generator</a></li>
+  <li>Original v1 sticker: <a href="https://www.stickermule.com/drb2025/item/19181049">StickerMule</a></li>
+  <li>Everything here is regenerated by <span class="mono">scripts/run_all.sh</span>, <span class="mono">scripts/make_figures.py</span> and
+    <span class="mono">scripts/build_site.py</span> in the <a href="https://github.com/dr-richard-barker/ABCD_v2">repo</a>.</li>
+</ul>
+</main>
+
+<script src="assets/data.js"></script>
+<script src="assets/common.js"></script>
+<script>
+(function () {
+  const U = window.ABCDUI, chips = U.chips;
+  U.bindNumbers();
+  document.getElementById('markers').innerHTML = U.markersHTML();
+  document.getElementById('arucolog').textContent = U.D.aruco.join('\n');
+  document.getElementById('dettable').innerHTML = U.detectionTable();
+  document.getElementById('v1geo').textContent = U.D.v1geometry.slice(1).join('. ') + '.';
+
+  const GROUPS = [['all', 'All'], ['calibration', 'Calibration'], ['plant', 'Plant tissue'], ['soil', 'Soil'], ['neutral ramp', 'Neutral ramp']];
+  let filter = 'all', sel = chips[0].id;
+  const f = document.getElementById('filters');
+  f.innerHTML = GROUPS.map(([k, l]) => `<button data-g="${k}">${l}</button>`).join('');
+  f.addEventListener('click', e => { const b = e.target.closest('button'); if (b) { filter = b.dataset.g; render(); } });
+  const btn = c => `<button data-id="${c.id}" title="${c.id} ${U.esc(c.munsell)} ${U.esc(c.label)}" aria-label="${c.id} ${U.esc(c.munsell)} ${U.esc(c.label)}" style="background:${c.sRGB_D65}"></button>`;
+  const grid = document.getElementById('grid'), ramp = document.getElementById('ramp');
+  grid.innerHTML = chips.filter(c => c.group !== 'neutral ramp').map(btn).join('');
+  ramp.innerHTML = chips.filter(c => c.group === 'neutral ramp').map(btn).join('');
+  [grid, ramp].forEach(el => el.addEventListener('click', e => { const b = e.target.closest('button'); if (b) { sel = b.dataset.id; render(); } }));
+
+  function render() {
+    f.querySelectorAll('button').forEach(b => b.classList.toggle('on', b.dataset.g === filter));
+    document.querySelectorAll('#grid button, #ramp button').forEach(b => {
+      const c = chips.find(x => x.id === b.dataset.id);
+      b.classList.toggle('dim', filter !== 'all' && c.group !== filter);
+      b.classList.toggle('sel', c.id === sel);
+    });
+    const c = chips.find(x => x.id === sel);
+    document.getElementById('detail').innerHTML = `<div class="big" style="background:${c.sRGB_D65}"></div>
+      <h3 style="margin:0 0 6px">${c.id} · <span class="mono">${U.esc(c.munsell)}</span></h3>
+      <p style="margin:0 0 10px">${U.esc(c.label)} <span class="muted">(${c.group})</span></p>
+      <dl><dt>Where from</dt><dd>${U.esc(c.source)}</dd>
+      <dt>Lab D50</dt><dd class="mono">${c.Lab_D50.join(', ')}</dd>
+      <dt>sRGB</dt><dd class="mono">${c.sRGB_D65}</dd>
+      <dt>CMYK (guide)</dt><dd class="mono">${c.CMYK_generic_pct.join(' / ')} %</dd>
+      <dt>Print ΔE2000</dt><dd>${c.gamut_dE2000}</dd>
+      <dt>On card</dt><dd>${c.size_mm.join(' × ')} mm at (${c.centre_mm.join(', ')}) mm</dd></dl>`;
+    const rows = chips.filter(c => filter === 'all' || c.group === filter);
+    document.getElementById('chiptable').innerHTML = `<thead><tr><th></th><th>ID</th><th>Group</th><th>Label</th><th>Munsell</th><th>Lab D50</th><th>sRGB</th><th>ΔE print</th><th>Where from</th></tr></thead><tbody>` +
+      rows.map(c => `<tr><td><span class="sw" style="background:${c.sRGB_D65}"></span></td><td>${c.id}</td><td>${c.group}</td><td>${U.esc(c.label)}</td><td class="mono">${U.esc(c.munsell)}</td><td class="mono">${c.Lab_D50.join(', ')}</td><td class="mono">${c.sRGB_D65}</td><td>${c.gamut_dE2000}</td><td style="min-width:260px">${U.esc(c.source)}</td></tr>`).join('') + '</tbody>';
+  }
+  render();
+})();
+</script>
+<script src="https://dr-richard-barker.github.io/Plant_response_to_radiation/cose/sites.js"></script>
+<script src="https://dr-richard-barker.github.io/Plant_response_to_radiation/cose/theme.js"></script>
+</body>
+</html>

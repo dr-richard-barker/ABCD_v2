@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+message: "If you use the ABCD v2 calibration card or its chip specification, please cite it as below."
+title: "ABCD v2: AstroBotany calibration card with Munsell-defined plant and soil colour chips"
+type: software
+authors:
+  - family-names: Barker
+    given-names: Richard
+    orcid: "https://orcid.org/0000-0001-5681-9857"
+repository-code: "https://github.com/dr-richard-barker/ABCD_v2"
+url: "https://dr-richard-barker.github.io/ABCD_v2/"
+license: MIT
+version: "2.0.0-draft"
+date-released: "2026-10-02"
+keywords:
+  - colour calibration
+  - Munsell
+  - ArUco
+  - plant phenotyping
+  - soil colour
+  - space biology

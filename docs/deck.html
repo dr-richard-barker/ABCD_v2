@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ABCD v2 deck</title>
+<link rel="stylesheet" href="assets/site.css">
+<style>
+  @page { size: 13.333in 7.5in; margin: 0; }
+  :root { --bg: #f7f6f2; --card: #fff; --fg: #1d1d1b; --muted: #5d5d58; --line: #dcdad2; --accent: #b5267a; --accent2: #1f6f8b; --ok: #1d7a3e; --bad: #b3261e; }
+  html, body { background: #3a3a3a; margin: 0; color: var(--fg); }
+  .slide { width: 13.333in; height: 7.5in; background: var(--bg); margin: 0 auto 24px; padding: .55in .7in; position: relative; overflow: hidden;
+           display: flex; flex-direction: column; page-break-after: always; break-after: page; }
+  .slide h1 { font-size: 40px; margin: 0 0 10px; line-height: 1.12; }
+  .slide h2 { font-size: 30px; margin: 0 0 14px; border: 0; padding: 0; }
+  .slide p, .slide li { font-size: 19px; max-width: none; line-height: 1.45; }
+  .slide .kicker { font: 600 14px/1 var(--mono, monospace); letter-spacing: .08em; text-transform: uppercase; color: var(--accent); margin-bottom: 10px; }
+  .slide .foot { position: absolute; bottom: .3in; left: .7in; right: .7in; display: flex; justify-content: space-between; font-size: 12px; color: var(--muted); }
+  .two { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; flex: 1; min-height: 0; }
+  .fill { flex: 1; min-height: 0; display: flex; align-items: center; justify-content: center; }
+  .fill img { max-width: 100%; max-height: 100%; object-fit: contain; border-radius: 8px; border: 1px solid var(--line); background: #fff; }
+  .slide table { font-size: 14px; }
+  .slide .table-wrap { border-radius: 8px; }
+  .big-num { font-size: 54px; font-weight: 800; color: var(--accent); line-height: 1; }
+  .q { background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 12px 16px; font-size: 18px; }
+  .qs { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  @media print { html, body { background: none; } .slide { margin: 0; } }
+</style>
+</head>
+<body>
+
+<section class="slide">
+  <div class="kicker">AstroBotany calibration · design proposal</div>
+  <h1>ABCD v2: a bigger calibration card whose colours mean something to plant and soil scientists</h1>
+  <p class="muted" style="margin:0 0 16px"><span data-k="card"></span> · <span data-k="nchips"></span> Munsell-defined colour chips ·
+    self-identifying ArUco corner markers (IDs <span data-k="ids"></span>)</p>
+  <div class="fill"><img src="assets/abcd_v2_preview.png" alt="ABCD v2 card"></div>
+  <div class="foot"><span>Richard Barker · for discussion with consultants</span><span>dr-richard-barker.github.io/ABCD_v2</span></div>
+</section>
+
+<section class="slide">
+  <div class="kicker">Why a v2</div>
+  <h2>v1 was too small, and its colours didn't map to anything we measure</h2>
+  <div class="fill" style="flex:0 0 auto;margin-bottom:14px"><img src="assets/versions_to_scale.png" alt="v1, v1.5 and v2 to scale" style="max-height:3.1in"></div>
+  <ul style="margin:0">
+    <li><b>Size:</b> v1's 5 cm card leaves few pixels per chip; v2 is <span data-k="card"></span> with <span data-k="chipmm"></span> chips.</li>
+    <li><b>Colours:</b> v1/v1.5 used screen primaries. Several can't be printed, and none corresponds to a plant or soil colour class.</li>
+    <li><b>Red frame:</b> competes with anthocyanin red in segmentation and pulls auto white balance. Removed.</li>
+  </ul>
+  <div class="foot"><span>Each card scaled from its own printed ruler</span><span>2</span></div>
+</section>
+
+<section class="slide">
+  <div class="kicker">Card anatomy</div>
+  <h2>What is on the card</h2>
+  <div class="fill"><img src="assets/card_anatomy.png" alt="Annotated card"></div>
+  <div class="foot"><span>Geometry from card/abcd_v2_chips.json</span><span>3</span></div>
+</section>
+
+<section class="slide">
+  <div class="kicker">Colour system</div>
+  <h2>Every chip is a Munsell notation; the printed colour is computed, then measured</h2>
+  <div class="pipeline" style="margin:4px 0 18px">
+    <div class="step"><b>1 · Notation</b>Soil-chart chips, Plant Tissue book hues, calibration hues.</div>
+    <div class="step"><b>2 · Renotation</b>Munsell's published data → CIE xyY.</div>
+    <div class="step"><b>3 · Print + screen</b>Lab D50 for print and measuring; sRGB for the file.</div>
+    <div class="step"><b>4 · Gamut gate</b>Must print (ΔE2000 ≤ 3) and fit sRGB, else chroma steps down.</div>
+    <div class="step"><b>5 · Measure</b>Spectrophotometer readings per batch replace the design values.</div>
+  </div>
+  <div class="two" style="grid-template-columns:repeat(3,1fr);flex:0 0 auto">
+    <div class="card"><div class="big-num" data-k="nswapped"></div><p style="margin:6px 0 0">chips reduced by the gate: <span class="mono" data-k="swapped" style="font-size:14px"></span></p></div>
+    <div class="card"><div class="big-num" data-k="maxde"></div><p style="margin:6px 0 0">largest remaining ΔE2000 between design and printable colour</p></div>
+    <div class="card"><div class="big-num">±<span data-k="werthd"></span></div><p style="margin:6px 0 0">/255 per channel vs an independent Munsell viewer, <span data-k="werthn"></span> chips</p></div>
+  </div>
+  <p class="muted" style="font-size:15px;margin-top:14px">The scanned soil-chart PDF supplied notations and names only; its pixel colours depend on the scanner and were not used.</p>
+  <div class="foot"><span>results/generator_log.txt · results/werth_crosscheck.txt</span><span>4</span></div>
+</section>
+
+<section class="slide">
+  <div class="kicker">Rows A + neutral ramp</div>
+  <h2>Calibration: anchors, a hue circle and a 12-step grey ramp</h2>
+  <div id="sw-cal"></div>
+  <div id="sw-ramp" style="margin-top:18px"></div>
+  <p style="margin-top:16px">Gives the colour-correction fit something to grip on in every hue direction, plus white, black and N5 (≈ 18 % grey) for exposure and white balance.</p>
+  <div class="foot"><span>Calibration hues: highest chroma that prints</span><span>5</span></div>
+</section>
+
+<section class="slide">
+  <div class="kicker">Rows B–C</div>
+  <h2>Plant tissue: leaf health, pigments, senescence and roots</h2>
+  <div id="sw-plant"></div>
+  <p style="margin-top:16px">Every hue is a page of the Munsell Plant Tissue Color Book. <b>Value/chroma are design targets</b>:
+    we'd like consultants to confirm or swap them for actual book chips.</p>
+  <div class="foot"><span>Hue list: Munsell Plant Tissue Color Book (vendor listing)</span><span>6</span></div>
+</section>
+
+<section class="slide">
+  <div class="kicker">Rows D–E</div>
+  <h2>Soil: chips taken from the Munsell soil-chart pages, with their printed names</h2>
+  <div id="sw-soil"></div>
+  <p style="margin-top:16px">Hues 10R to 2.5Y. The low-chroma greys span grey-regolith darkness. <b>No chip claims to match a specific simulant or Apollo
+    sample</b>; targeting simulants needs published Munsell values for them.</p>
+  <div class="foot"><span>Source: Munsell Soil-Color Charts (soils.uga.edu scan)</span><span>7</span></div>
+</section>
+
+<section class="slide">
+  <div class="kicker">Corner markers</div>
+  <h2>Standard ArUco markers: the card identifies itself</h2>
+  <div class="two" style="flex:0 0 auto"><div id="mk"></div><div>
+    <ul>
+      <li>v1 already used OpenCV <span class="mono">DICT_4X4_50</span> IDs <span data-k="v1ids"></span>.</li>
+      <li>v2 uses IDs <span data-k="ids"></span>, the best-separated block of four: at least 5 bits from any v1 marker, 8 from their own rotations.</li>
+      <li>Any ArUco reader (OpenCV, arucogen, our app) knows which card, which corner, and which way up.</li>
+      <li>Verified with OpenCV's own detector on both cards.</li>
+    </ul></div></div>
+  <div class="foot"><span>results/aruco_ids.txt</span><span>8</span></div>
+</section>
+
+<section class="slide">
+  <div class="kicker">Does the app find it?</div>
+  <h2>Detection on synthetic photos, before and after marker-ID checking</h2>
+  <div id="det" style="font-size:13px"></div>
+  <div class="foot"><span>results/detection_before.txt · results/detection_after.txt</span><span>9</span></div>
+</section>
+
+<section class="slide">
+  <div class="kicker">Printing, measuring + one v1 finding</div>
+  <h2>From design values to measured references</h2>
+  <div class="two">
+    <div><ol>
+      <li>Print matte if possible.</li>
+      <li>Measure ≥ 3 stickers per batch, every chip, with a spectrophotometer (D50 / 2°).</li>
+      <li>Flag chips that vary by more than ΔE2000 2 between stickers.</li>
+      <li>Measured Lab values replace design values in the app.</li>
+      <li>Each print run gets its own batch number on the card.</li>
+    </ol></div>
+    <div class="card"><b>v1 scale finding.</b> Against its own printed ruler, v1's markers are not 4.3 cm apart in both directions as the app assumes:
+      <p class="mono" id="v1geo" style="font-size:14px"></p><p style="font-size:16px">To confirm on real photos before changing the app.</p></div>
+  </div>
+  <div class="foot"><span>results/v1_geometry.txt</span><span>10</span></div>
+</section>
+
+<section class="slide">
+  <div class="kicker">Decisions needed</div>
+  <h2>Open questions for consultants</h2>
+  <div class="qs">
+    <div class="q"><b>Plant shades.</b> Right tissue classes and shades? Swap for real Plant Tissue book chips?</div>
+    <div class="q"><b>Soil targets.</b> Should chips match specific regolith simulants? Which, with what published values?</div>
+    <div class="q"><b>Format.</b> Sticker or laminated card? Is 14 × 9 cm right for the imaging setups we support?</div>
+    <div class="q"><b>Markers + numbering.</b> IDs 0–3 for v2; how should future versions and batches be numbered?</div>
+    <div class="q"><b>v1 scale.</b> Confirm the 4.3 cm discrepancy on real v1 photos, then correct the app.</div>
+    <div class="q"><b>Measurement.</b> Who measures printed batches, and with which instrument?</div>
+  </div>
+  <p style="margin-top:16px">Comment on the GitHub issues: <span class="mono">github.com/dr-richard-barker/ABCD_v2/issues</span></p>
+  <div class="foot"><span>Site: dr-richard-barker.github.io/ABCD_v2</span><span>11</span></div>
+</section>
+
+<script src="assets/data.js"></script>
+<script src="assets/common.js"></script>
+<script>
+  const U = window.ABCDUI;
+  U.bindNumbers();
+  document.getElementById('sw-cal').innerHTML = U.swatchList('calibration', 10, 70);
+  document.getElementById('sw-ramp').innerHTML = U.swatchList('neutral ramp', 12, 60);
+  document.getElementById('sw-plant').innerHTML = U.swatchList('plant', 10, 95);
+  document.getElementById('sw-soil').innerHTML = U.swatchList('soil', 10, 95);
+  document.getElementById('mk').innerHTML = U.markersHTML();
+  document.getElementById('det').innerHTML = U.detectionTable();
+  document.getElementById('v1geo').innerHTML = U.D.v1geometry.map(U.esc).join('<br>');
+</script>
+</body>
+</html>

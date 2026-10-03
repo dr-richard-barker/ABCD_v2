@@ -1,0 +1,9 @@
+chips: 62 (10 calibration, 20 plant, 20 soil, 12 neutral)
+ruler 10 cm = 1181.1 px @ 300 dpi; fiducial/chip area ratio 3.16
+gamut: 4 chips chroma-reduced; max dE2000 after gate 2.65; sRGB out-of-gamut: []
+   5Y 8/12: outside sRGB; chroma -> 5Y 8/10
+   2.5G 5/10: outside sRGB; chroma -> 2.5G 5/8
+   5B 5/8: outside sRGB; chroma -> 5B 5/6
+   7.5PB 3/12: out of CMYK gamut (dE2000 3.0); chroma -> 7.5PB 3/10
+corner span cm: {'x': 11.9, 'y': 6.9}
+wrote ../AstroBotany_calibration_image_sharing_and_analysis/src/lib/abcd_v2_chips.ts

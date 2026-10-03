@@ -1,0 +1,3 @@
+ruler: 94.3 px/cm (0 cm at x=63.0, 5 cm at x=534.5)
+fiducial-centre span: x 4.56 cm, y 3.69 cm (mean 4.12 cm)
+app assumes 4.30 cm for both -> scale error -4.1% (lengths reported +4.3%)
