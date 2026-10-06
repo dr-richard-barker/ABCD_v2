@@ -424,13 +424,8 @@ def build(batch: int, outdir: Path):
         x = RULER_X0 + mmv
         ln = 5.0 if mmv % 10 == 0 else 3.5 if mmv % 5 == 0 else 2.0
         cv.line(x, top, x, top + ln, sw=0.2 if mmv % 10 else 0.3)
-        if mmv % 10 == 0:
-            # "10" sits flush-right of its tick so it clears the TR fiducial
-            if mmv == RULER_LEN:
-                cv.text(x + 0.4, top + 9.3, str(mmv // 10), 3.6, anchor="end", bold=True)
-            else:
-                cv.text(x, top + 9.3, str(mmv // 10), 3.6, bold=True)
-    cv.text(RULER_X0 + 5, top + 9.0, "cm", 2.4)
+        if mmv % 10 == 0 and 0 < mmv < RULER_LEN:
+            cv.text(x, top + 9.3, str(mmv // 10), 3.6, bold=True)
     # vertical ruler 0..5 cm on the left column (ticks from the left edge of the column)
     left = 3.0
     cv.line(left, VRULER_Y0, left, VRULER_Y0 + VRULER_LEN, sw=0.25)
@@ -438,7 +433,7 @@ def build(batch: int, outdir: Path):
         y = VRULER_Y0 + mmv
         ln = 5.0 if mmv % 10 == 0 else 3.5 if mmv % 5 == 0 else 2.0
         cv.line(left, y, left + ln, y, sw=0.2 if mmv % 10 else 0.3)
-        if mmv % 10 == 0:
+        if mmv % 10 == 0 and 0 < mmv < VRULER_LEN:
             cv.text(left + 9.5, y + 1.2, str(mmv // 10), 3.2, bold=True)
     # checker (right column)
     for j in range(CHECK_NY):
@@ -453,9 +448,7 @@ def build(batch: int, outdir: Path):
     for i, b in enumerate(bits):
         if b:
             cv.rect(bx + i * bw, by, bw, bw, "#000000")
-    cv.text(bx + 8 * bw + 3, by + 2.3, f"ABCD v2  ·  batch {batch:02d}", 3.0, anchor="start", bold=True)
-    cv.text(119.5, by + 2.3, "chips: Munsell renotation · spec abcd_v2_chips.csv", 2.0, anchor="end",
-            fill="#555555")
+    cv.text(bx + 8 * bw + 3, by + 2.3, f'ABCD v2  ·  batch {batch:02d}  ·  scale bars in "cm"', 3.0, anchor="start", bold=True)
     # trim keyline (preview only; not in the print PDF)
     cv_preview = Canvas()
     cv_preview.items = list(cv.items)

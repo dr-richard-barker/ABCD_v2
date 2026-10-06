@@ -183,7 +183,6 @@
 <rect x="134.833" y="84.833" width="2.667" height="2.667" fill="#000000"/>
 <line x1="20.000" y1="4.000" x2="120.000" y2="4.000" stroke="#000000" stroke-width="0.25"/>
 <line x1="20.000" y1="4.000" x2="20.000" y2="9.000" stroke="#000000" stroke-width="0.3"/>
-<text x="20.000" y="13.300" font-family="Helvetica, Arial, sans-serif" font-size="3.6" font-weight="bold" text-anchor="middle" fill="#000000">0</text>
 <line x1="21.000" y1="4.000" x2="21.000" y2="6.000" stroke="#000000" stroke-width="0.2"/>
 <line x1="22.000" y1="4.000" x2="22.000" y2="6.000" stroke="#000000" stroke-width="0.2"/>
 <line x1="23.000" y1="4.000" x2="23.000" y2="6.000" stroke="#000000" stroke-width="0.2"/>
@@ -293,11 +292,8 @@
 <line x1="118.000" y1="4.000" x2="118.000" y2="6.000" stroke="#000000" stroke-width="0.2"/>
 <line x1="119.000" y1="4.000" x2="119.000" y2="6.000" stroke="#000000" stroke-width="0.2"/>
 <line x1="120.000" y1="4.000" x2="120.000" y2="9.000" stroke="#000000" stroke-width="0.3"/>
-<text x="120.400" y="13.300" font-family="Helvetica, Arial, sans-serif" font-size="3.6" font-weight="bold" text-anchor="end" fill="#000000">10</text>
-<text x="25.000" y="13.000" font-family="Helvetica, Arial, sans-serif" font-size="2.4" text-anchor="middle" fill="#000000">cm</text>
 <line x1="3.000" y1="20.000" x2="3.000" y2="70.000" stroke="#000000" stroke-width="0.25"/>
 <line x1="3.000" y1="20.000" x2="8.000" y2="20.000" stroke="#000000" stroke-width="0.3"/>
-<text x="12.500" y="21.200" font-family="Helvetica, Arial, sans-serif" font-size="3.2" font-weight="bold" text-anchor="middle" fill="#000000">0</text>
 <line x1="3.000" y1="21.000" x2="5.000" y2="21.000" stroke="#000000" stroke-width="0.2"/>
 <line x1="3.000" y1="22.000" x2="5.000" y2="22.000" stroke="#000000" stroke-width="0.2"/>
 <line x1="3.000" y1="23.000" x2="5.000" y2="23.000" stroke="#000000" stroke-width="0.2"/>
@@ -352,7 +348,6 @@
 <line x1="3.000" y1="68.000" x2="5.000" y2="68.000" stroke="#000000" stroke-width="0.2"/>
 <line x1="3.000" y1="69.000" x2="5.000" y2="69.000" stroke="#000000" stroke-width="0.2"/>
 <line x1="3.000" y1="70.000" x2="8.000" y2="70.000" stroke="#000000" stroke-width="0.3"/>
-<text x="12.500" y="71.200" font-family="Helvetica, Arial, sans-serif" font-size="3.2" font-weight="bold" text-anchor="middle" fill="#000000">5</text>
 <rect x="121.500" y="20.000" width="5.000" height="5.000" fill="#000000"/>
 <rect x="131.500" y="20.000" width="5.000" height="5.000" fill="#000000"/>
 <rect x="126.500" y="25.000" width="5.000" height="5.000" fill="#000000"/>
@@ -372,7 +367,6 @@
 <rect x="20.600" y="80.600" width="20.800" height="3.300" fill="none" stroke="#000000" stroke-width="0.25"/>
 <rect x="23.500" y="81.000" width="2.500" height="2.500" fill="#000000"/>
 <rect x="38.500" y="81.000" width="2.500" height="2.500" fill="#000000"/>
-<text x="44.000" y="83.300" font-family="Helvetica, Arial, sans-serif" font-size="3.0" font-weight="bold" text-anchor="start" fill="#000000">ABCD v2  ·  batch 01</text>
-<text x="119.500" y="83.300" font-family="Helvetica, Arial, sans-serif" font-size="2.0" text-anchor="end" fill="#555555">chips: Munsell renotation · spec abcd_v2_chips.csv</text>
+<text x="44.000" y="83.300" font-family="Helvetica, Arial, sans-serif" font-size="3.0" font-weight="bold" text-anchor="start" fill="#000000">ABCD v2  ·  batch 01  ·  scale bars in "cm"</text>
 <rect x="0.000" y="0.000" width="140.000" height="90.000" fill="none" stroke="#BBBBBB" stroke-width="0.2" rx="3.0"/>
 </svg>
